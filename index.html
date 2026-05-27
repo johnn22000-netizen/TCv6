@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TCv6 調課系統</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <main class="layout">
+      <section class="card">
+        <h2>並排週課表</h2>
+        <div class="board-workspace">
+          <div class="boards-scroll">
+            <div id="boards-container" class="boards-container"></div>
+          </div>
+        </div>
+        <p class="board-tip">提示：先產生第1個課表，再點課表格子選擇候選老師，就會往右新增第2、第3個課表。</p>
+
+        <div id="slot-candidate-panel" class="slot-candidate-panel hidden">
+          <div id="slot-candidate-header" class="slot-candidate-header">
+            <h3 id="slot-candidate-title">UF2 操控面板</h3>
+            <div class="slot-candidate-tools">
+              <button id="slot-candidate-pin" class="btn" type="button">置頂</button>
+              <button id="slot-candidate-close" class="btn" type="button">隱藏</button>
+            </div>
+          </div>
+
+          <div class="floating-tab-bar" role="tablist" aria-label="UF2 懸浮功能分頁">
+            <button id="floating-tab-main" class="btn floating-tab-btn active" type="button" data-tab="main">主要操作</button>
+            <button id="floating-tab-candidate" class="btn floating-tab-btn" type="button" data-tab="candidate">時段候選教師</button>
+            <button id="floating-tab-adjustment" class="btn floating-tab-btn" type="button" data-tab="adjustment">加入異動清單</button>
+            <button id="floating-tab-output" class="btn floating-tab-btn" type="button" data-tab="output">輸出調課單</button>
+            <button id="floating-tab-settings" class="btn floating-tab-btn" type="button" data-tab="settings">設定</button>
+            <button id="floating-tab-history" class="btn floating-tab-btn" type="button" data-tab="history">歷史異動</button>
+          </div>
+
+          <section id="floating-panel-main" class="floating-panel-page active" data-panel="main">
+            <div id="ops-compact-bar" class="ops-compact-bar hidden">
+              <span id="ops-compact-text">主查詢已鎖定</span>
+              <button id="btn-edit-main-target" class="btn" type="button">修改主查詢</button>
+            </div>
+            <div class="ops-grid">
+              <label>
+                檢視模式
+                <select id="view-mode">
+                  <option value="teacher">教師視角</option>
+                  <option value="class">班級視角</option>
+                </select>
+              </label>
+              <label id="main-class-wrap" class="hidden">
+                主查詢班級
+                <select id="main-class-select">
+                  <option value="">請先選擇班級</option>
+                </select>
+              </label>
+              <div id="main-target-teacher-wrap" class="target-stack">
+                <label>
+                  主查詢科目
+                  <select id="main-subject-select">
+                    <option value="">請先選擇科目</option>
+                  </select>
+                </label>
+                <label>
+                  主查詢教師
+                  <select id="main-teacher-select">
+                    <option value="">請先選擇教師</option>
+                  </select>
+                </label>
+                <label>
+                  主查詢目標（目前）
+                  <input id="main-target-display" type="text" readonly placeholder="請先選擇科目與教師">
+                </label>
+              </div>
+              <label>
+                週別基準日
+                <input id="anchor-date" type="date">
+              </label>
+              <div class="actions full">
+                <button id="btn-render-boards" class="btn primary" type="button">產生第1個課表</button>
+                <button id="btn-swap-targets" class="btn" type="button">重設後續課表</button>
+              </div>
+            </div>
+            <div id="conflict-banner" class="conflict-banner hidden"></div>
+          </section>
+
+          <section id="floating-panel-candidate" class="floating-panel-page" data-panel="candidate">
+            <div class="candidate-two-col-layout">
+              <div class="candidate-left-col">
+                <div class="mini-board-block">
+                  <div class="mini-board-fixed">
+                    <div id="adjustment-result" class="adjustment-result"></div>
+                  </div>
+                </div>
+                <div class="candidate-info-block">
+                  <div class="adjustment-view-toggle" role="group" aria-label="調課資訊顯示模式">
+                    <button id="adjustment-view-simple" class="btn btn-view active" type="button">簡單版</button>
+                    <button id="adjustment-view-detail" class="btn btn-view" type="button">詳盡版</button>
+                    <button id="add-adjustment-btn" class="btn primary" type="button">確認課程異動</button>
+                  </div>
+                  <div id="adjustment-summary" class="adjustment-summary"></div>
+                </div>
+              </div>
+
+              <div class="candidate-right-col">
+                <h4 class="candidate-caption">時段候選老師</h4>
+                <div class="slot-candidate-matrix">
+                  <section class="slot-col slot-box">
+                    <h4>同科教師</h4>
+                    <div id="slot-same-subject" class="slot-col-list"></div>
+                  </section>
+                  <section class="slot-col slot-box">
+                    <h4>同班無課</h4>
+                    <div id="slot-class-free" class="slot-col-list"></div>
+                  </section>
+                  <section class="slot-col slot-box">
+                    <h4>全校無課</h4>
+                    <div id="slot-campus-free" class="slot-col-list"></div>
+                  </section>
+                  <section class="slot-col slot-box">
+                    <h4>導師</h4>
+                    <div id="slot-homeroom" class="slot-col-list"></div>
+                  </section>
+                  <section class="slot-col slot-box">
+                    <h4>同班有課</h4>
+                    <div id="slot-class-busy" class="slot-col-list"></div>
+                  </section>
+                  <section class="slot-col slot-box">
+                    <h4>全校有課</h4>
+                    <div id="slot-campus-busy" class="slot-col-list"></div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="floating-panel-adjustment" class="floating-panel-page" data-panel="adjustment">
+            <div class="floating-split-layout">
+              <div class="floating-split-left">
+                <div id="adjustment-draft-mini-board" class="adjustment-result"></div>
+              </div>
+              <div class="floating-split-right">
+                <div class="adjustment-actions">
+                  
+                  <button id="export-adjustment-btn" class="btn" type="button">下載 Excel</button>
+                  <button id="build-adjustment-workbook-btn" class="btn" type="button">下載 Excel+JPG</button>
+                </div>
+                <div id="adjustment-entity-icons" class="adjustment-entity-icons"></div>
+                <div id="adjustment-conflict-summary" class="adjustment-conflict-summary"></div>
+                <div id="adjustment-draft-list" class="adjustment-draft-list"></div>
+              </div>
+            </div>
+          </section>
+
+          <section id="floating-panel-output" class="floating-panel-page" data-panel="output">
+            <div class="output-form-grid">
+              <label>
+                申請教師
+                <input id="output-applicant-teacher" type="text" readonly>
+              </label>
+              <label>
+                調課區間
+                <input id="output-date-range" type="text" placeholder="mm/dd-mm/dd">
+              </label>
+              <label>
+                調課假別
+                <select id="output-leave-type">
+                  <option value="調課">調課</option>
+                  <option value="公假">公假</option>
+                  <option value="公假派代">公假派代</option>
+                  <option value="公假自理">公假自理</option>
+                  <option value="探索護隊">探索護隊</option>
+                  <option value="校內會議">校內會議</option>
+                  <option value="校內競賽">校內競賽</option>
+                  <option value="事假">事假</option>
+                  <option value="短病假">短病假</option>
+                  <option value="長病假">長病假</option>
+                  <option value="喪假">喪假</option>
+                  <option value="休假">休假</option>
+                  <option value="身心調適假">身心調適假</option>
+                </select>
+              </label>
+              <label class="full">
+                調課事由、文號
+                <input id="output-reason-doc" type="text" placeholder="可空白，預設帶入調課假別">
+              </label>
+              <label class="check-row full">
+                <input id="output-arrow-assist" type="checkbox" checked>
+                <span>箭頭輔助</span>
+              </label>
+              <div class="actions full">
+                <button id="output-confirm-export" class="btn primary" type="button">確認輸出（Excel+JPG）</button>
+              </div>
+              <div id="output-export-hint" class="settings-hint full">尚未加入異動清單，請先到「時段候選教師」完成「確認課程異動」。</div>
+            </div>
+          </section>
+
+          <section id="floating-panel-settings" class="floating-panel-page" data-panel="settings">
+            <div class="settings-panel">
+              <div class="settings-block">
+                <h4 class="candidate-caption">原始課表來源</h4>
+                <div class="settings-actions">
+                  <input id="settings-schedule-file" type="file" accept=".xls,.xlsx,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+                  <button id="settings-load-file-btn" class="btn primary" type="button">載入選取檔案</button>
+                  <button id="settings-load-default-btn" class="btn" type="button">套用內建原始課表</button>
+                  <button id="settings-download-json-btn" class="btn" type="button">下載轉換後 JSON</button>
+                  <button id="settings-reset-source-btn" class="btn danger" type="button">還原內建來源</button>
+                </div>
+                <div id="settings-source-status" class="settings-status">目前使用：內建原始課表</div>
+                <div class="settings-hint">可直接載入你提供的 [1142課表.xlsx] 結構；系統會先轉成目前 TCv6 使用的 JSON 格式，再立即套用。</div>
+              </div>
+            </div>
+          </section>
+
+          <section id="floating-panel-history" class="floating-panel-page" data-panel="history">
+            <div class="history-toolbar">
+              <label class="history-search-label">
+                搜尋（老師/班級/日期）
+                <input id="history-search-input" type="text" placeholder="例如：沈明穎、七智、2026-05-15">
+              </label>
+              <div class="history-toolbar-actions">
+                <button id="history-search-btn" class="btn" type="button">查詢</button>
+                <button id="history-reset-btn" class="btn" type="button">清除查詢</button>
+                <button id="history-clear-btn" class="btn danger" type="button">清空歷史</button>
+              </div>
+            </div>
+            <div class="history-layout">
+              <div class="history-preview-block">
+                <h4 class="candidate-caption">歷史異動小課表</h4>
+                <div id="history-mini-board" class="adjustment-result"></div>
+              </div>
+              <div id="history-list" class="history-list"></div>
+            </div>
+          </section>
+
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./js/app.bundle.js"></script>
+</body>
+</html>
