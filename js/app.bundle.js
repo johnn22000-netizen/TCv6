@@ -6823,7 +6823,14 @@ function validateEventInput(input) {
 }
 
 /* ---- storage.js ---- */
-const STORAGE_KEY = "tcv6_app_state_v1";
+const STORAGE_KEY_BASE = "tcv6_app_state_v1";
+const SCHOOL_BINDING_KEY = "tcv6_school_binding_v1";
+const DEFAULT_SCHOOL_ID = "A-school";
+
+function buildSchoolStorageKey(schoolId) {
+  const normalized = String(schoolId || "").trim() || DEFAULT_SCHOOL_ID;
+  return `${STORAGE_KEY_BASE}__${normalized}`;
+}
 
 function createDefaultState() {
   return {
@@ -6857,11 +6864,17 @@ function cloneStateValue(value) {
 }
 
 class EventStorage {
+  static activeStorageKey = buildSchoolStorageKey(DEFAULT_SCHOOL_ID);
   static cache = null;
+
+  static setActiveSchool(schoolId) {
+    this.activeStorageKey = buildSchoolStorageKey(schoolId);
+    this.cache = null;
+  }
 
   static readStateFromStorage() {
     try {
-      const raw = localStorage.getItem(STORAGE_KEY);
+      const raw = localStorage.getItem(this.activeStorageKey);
       if (!raw) return createDefaultState();
       return normalizeState(JSON.parse(raw));
     } catch (_) {
@@ -6887,7 +6900,7 @@ class EventStorage {
 
   static saveState(state) {
     const normalizedState = this.replaceCache(state);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(normalizedState));
+    localStorage.setItem(this.activeStorageKey, JSON.stringify(normalizedState));
   }
 
   static loadAll() {
@@ -6909,7 +6922,7 @@ class EventStorage {
 
   static clear() {
     this.cache = null;
-    localStorage.removeItem(STORAGE_KEY);
+    localStorage.removeItem(this.activeStorageKey);
   }
 
   static loadAdjustmentDrafts() {
@@ -6962,6 +6975,41 @@ class EventStorage {
     const state = this.getCachedState();
     state.baseScheduleData = null;
     this.saveState(state);
+  }
+}
+
+function createDefaultSchoolBinding() {
+  return {
+    schoolId: DEFAULT_SCHOOL_ID,
+    backendUrl: ""
+  };
+}
+
+function normalizeSchoolBinding(rawBinding) {
+  const raw = rawBinding && typeof rawBinding === "object" ? rawBinding : {};
+  const schoolId = String(raw.schoolId || "").trim() || DEFAULT_SCHOOL_ID;
+  const backendUrl = String(raw.backendUrl || "").trim();
+  return {
+    schoolId,
+    backendUrl
+  };
+}
+
+class SchoolBindingStorage {
+  static loadBinding() {
+    try {
+      const raw = localStorage.getItem(SCHOOL_BINDING_KEY);
+      if (!raw) return createDefaultSchoolBinding();
+      return normalizeSchoolBinding(JSON.parse(raw));
+    } catch (_) {
+      return createDefaultSchoolBinding();
+    }
+  }
+
+  static saveBinding(binding) {
+    const normalized = normalizeSchoolBinding(binding);
+    localStorage.setItem(SCHOOL_BINDING_KEY, JSON.stringify(normalized));
+    return normalized;
   }
 }
 
@@ -7367,6 +7415,12 @@ const el = {
   settingsDownloadJsonBtn: document.getElementById("settings-download-json-btn"),
   settingsResetSourceBtn: document.getElementById("settings-reset-source-btn"),
   settingsSourceStatus: document.getElementById("settings-source-status"),
+  settingsSchoolSelect: document.getElementById("settings-school-select"),
+  settingsBackendUrl: document.getElementById("settings-backend-url"),
+  settingsApplySchoolBtn: document.getElementById("settings-apply-school-btn"),
+  settingsPullCloudBtn: document.getElementById("settings-pull-cloud-btn"),
+  settingsPushCloudBtn: document.getElementById("settings-push-cloud-btn"),
+  settingsSchoolStatus: document.getElementById("settings-school-status"),
   historySearchInput: document.getElementById("history-search-input"),
   historySearchBtn: document.getElementById("history-search-btn"),
   historyResetBtn: document.getElementById("history-reset-btn"),
@@ -7433,6 +7487,7 @@ let outputDateRangeAutoValue = "";
 let exportLibsPromise = null;
 let spreadsheetImportLibPromise = null;
 let currentScheduleSourceLabel = "內建原始課表";
+let currentSchoolBinding = createDefaultSchoolBinding();
 const forcedSubstituteLinks = new Set();
 
 const STATUS_DEF = {
@@ -8075,6 +8130,170 @@ function renderScheduleSourceStatus() {
   if (!el.settingsSourceStatus) return;
   const totalClasses = baseScheduleData && baseScheduleData.schedules ? Object.keys(baseScheduleData.schedules).length : 0;
   el.settingsSourceStatus.textContent = `目前使用：${currentScheduleSourceLabel}${totalClasses ? `｜共 ${totalClasses} 班` : ""}`;
+}
+
+function getSchoolLabel(schoolId) {
+  if (schoolId === "B-school") return "B 校";
+  return "A 校";
+}
+
+function syncSchoolBindingControls() {
+  if (el.settingsSchoolSelect) {
+    el.settingsSchoolSelect.value = currentSchoolBinding.schoolId;
+  }
+  if (el.settingsBackendUrl) {
+    el.settingsBackendUrl.value = currentSchoolBinding.backendUrl || "";
+  }
+}
+
+function renderSchoolBindingStatus(appendText = "") {
+  if (!el.settingsSchoolStatus) return;
+  const schoolLabel = getSchoolLabel(currentSchoolBinding.schoolId);
+  const backendState = currentSchoolBinding.backendUrl ? "已設定雲端 API" : "未設定雲端 API";
+  const suffix = appendText ? `｜${appendText}` : "";
+  el.settingsSchoolStatus.textContent = `目前校別：${schoolLabel}（${currentSchoolBinding.schoolId}）｜${backendState}${suffix}`;
+}
+
+function readSchoolBindingFromForm() {
+  return normalizeSchoolBinding({
+    schoolId: el.settingsSchoolSelect ? el.settingsSchoolSelect.value : currentSchoolBinding.schoolId,
+    backendUrl: el.settingsBackendUrl ? el.settingsBackendUrl.value : currentSchoolBinding.backendUrl
+  });
+}
+
+async function loadStateFromActiveSchoolStorage() {
+  const storedBaseScheduleData = EventStorage.loadBaseScheduleData();
+  if (storedBaseScheduleData && storedBaseScheduleData.schedules) {
+    applyBaseScheduleData(storedBaseScheduleData, {
+      persist: false,
+      sourceLabel: "自訂上傳課表"
+    });
+  } else {
+    baseScheduleData = null;
+    dbTeacherCatalog = new Map();
+    dbClasses = [];
+    currentScheduleSourceLabel = "內建原始課表";
+    await loadTeacherCatalogFromDatabase();
+    refreshMainTargetControls({ includeSourceStatus: true });
+  }
+
+  events = EventStorage.loadAll();
+  adjustmentHistory = EventStorage.loadAdjustmentHistory();
+  adjustmentDrafts = EventStorage.loadAdjustmentDrafts().map((draft, index) => normalizeAdjustmentDraft(draft, index));
+
+  const hasHistoryEvents = events.some((eventItem) => String(eventItem && eventItem.source ? eventItem.source : "") === "ADJUSTMENT_HISTORY");
+  if (!hasHistoryEvents && adjustmentHistory.length) {
+    const rebuiltHistoryEvents = buildHistoryEventsFromRecords(adjustmentHistory);
+    events = [...rebuiltHistoryEvents, ...events];
+    EventStorage.saveAll(events);
+  }
+
+  historySearchKeyword = "";
+  historyExpandedIds = new Set();
+  activeHistoryIndex = 0;
+  if (el.historySearchInput) {
+    el.historySearchInput.value = "";
+  }
+
+  refreshMainTargetControls();
+  refreshTable();
+  renderAdjustmentDraftList();
+  renderAdjustmentSheetTabs();
+  renderHistoryList();
+  renderScheduleSourceStatus();
+  updateSlotCandidatePanel(lastClickedSlot);
+  renderConflictBanner(el.conflictBanner, []);
+  renderAdjustmentStatusWall();
+  syncOutputFormDefaults();
+}
+
+function buildBackendUrl(baseUrl, action, schoolId) {
+  const normalized = String(baseUrl || "").trim();
+  if (!normalized) throw new Error("請先設定 Apps Script Web App URL");
+  const url = new URL(normalized);
+  url.searchParams.set("action", action);
+  url.searchParams.set("schoolId", schoolId);
+  return url;
+}
+
+async function pullSchoolDataFromCloud() {
+  const backendUrl = String(currentSchoolBinding.backendUrl || "").trim();
+  if (!backendUrl) {
+    throw new Error("尚未設定 Apps Script Web App URL");
+  }
+
+  const requestUrl = buildBackendUrl(backendUrl, "loadAll", currentSchoolBinding.schoolId);
+  const response = await fetch(requestUrl, {
+    method: "GET",
+    credentials: "omit"
+  });
+  if (!response.ok) {
+    throw new Error(`雲端同步失敗（HTTP ${response.status}）`);
+  }
+
+  const payload = await response.json();
+  if (payload && payload.ok === false) {
+    throw new Error(String(payload.message || "雲端回傳失敗"));
+  }
+
+  const data = payload && payload.data ? payload.data : payload;
+  if (!data || typeof data !== "object") {
+    throw new Error("雲端資料格式不正確");
+  }
+
+  EventStorage.saveAll(Array.isArray(data.events) ? data.events : []);
+  EventStorage.saveAdjustmentDrafts(Array.isArray(data.adjustmentDrafts) ? data.adjustmentDrafts : []);
+  EventStorage.saveAdjustmentHistory(Array.isArray(data.adjustmentHistory) ? data.adjustmentHistory : []);
+  EventStorage.saveBaseScheduleData(data.baseScheduleData && typeof data.baseScheduleData === "object" ? data.baseScheduleData : null);
+  await loadStateFromActiveSchoolStorage();
+}
+
+async function pushSchoolDataToCloud() {
+  const backendUrl = String(currentSchoolBinding.backendUrl || "").trim();
+  if (!backendUrl) {
+    throw new Error("尚未設定 Apps Script Web App URL");
+  }
+
+  const requestUrl = buildBackendUrl(backendUrl, "saveAll", currentSchoolBinding.schoolId);
+  const body = {
+    schoolId: currentSchoolBinding.schoolId,
+    data: {
+      events,
+      adjustmentDrafts,
+      adjustmentHistory,
+      baseScheduleData
+    }
+  };
+
+  const response = await fetch(requestUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(body),
+    credentials: "omit"
+  });
+  if (!response.ok) {
+    throw new Error(`雲端推送失敗（HTTP ${response.status}）`);
+  }
+
+  const payload = await response.json().catch(() => ({}));
+  if (payload && payload.ok === false) {
+    throw new Error(String(payload.message || "雲端回傳失敗"));
+  }
+}
+
+async function applySchoolBinding(binding, { saveBinding = true, reloadState = true } = {}) {
+  currentSchoolBinding = normalizeSchoolBinding(binding);
+  if (saveBinding) {
+    currentSchoolBinding = SchoolBindingStorage.saveBinding(currentSchoolBinding);
+  }
+  EventStorage.setActiveSchool(currentSchoolBinding.schoolId);
+  syncSchoolBindingControls();
+  renderSchoolBindingStatus();
+  if (reloadState) {
+    await loadStateFromActiveSchoolStorage();
+  }
 }
 
 function refreshMainTargetControls({ includeSourceStatus = false } = {}) {
@@ -11153,18 +11372,11 @@ function loadSeed() {
   refreshMainTargetControls();
 }
 
-function init() {
-  const storedBaseScheduleData = EventStorage.loadBaseScheduleData();
-  if (storedBaseScheduleData && storedBaseScheduleData.schedules) {
-    applyBaseScheduleData(storedBaseScheduleData, {
-      persist: false,
-      sourceLabel: "自訂上傳課表"
-    });
-  } else {
-    loadTeacherCatalogFromDatabase().finally(() => {
-      refreshMainTargetControls({ includeSourceStatus: true });
-    });
-  }
+async function init() {
+  currentSchoolBinding = SchoolBindingStorage.loadBinding();
+  EventStorage.setActiveSchool(currentSchoolBinding.schoolId);
+  syncSchoolBindingControls();
+  renderSchoolBindingStatus();
 
   if (el.period) {
     renderPeriodOptions(el.period, PERIODS);
@@ -11173,28 +11385,9 @@ function init() {
     el.eventDate.value = today();
   }
   el.anchorDate.value = today();
-  events = EventStorage.loadAll();
-  adjustmentHistory = EventStorage.loadAdjustmentHistory();
-  adjustmentDrafts = EventStorage.loadAdjustmentDrafts().map((draft, index) => normalizeAdjustmentDraft(draft, index));
-
-  // 兼容舊資料：若已有歷史異動但 events 尚未帶入，啟動時補一次。
-  const hasHistoryEvents = events.some((eventItem) => String(eventItem && eventItem.source ? eventItem.source : "") === "ADJUSTMENT_HISTORY");
-  if (!hasHistoryEvents && adjustmentHistory.length) {
-    const rebuiltHistoryEvents = buildHistoryEventsFromRecords(adjustmentHistory);
-    events = [...rebuiltHistoryEvents, ...events];
-    EventStorage.saveAll(events);
-  }
-  refreshMainTargetControls();
-  refreshTable();
-  renderAdjustmentDraftList();
-  renderAdjustmentSheetTabs();
-  renderHistoryList();
-  renderScheduleSourceStatus();
-  updateSlotCandidatePanel(lastClickedSlot);
-  renderConflictBanner(el.conflictBanner, []);
+  await loadStateFromActiveSchoolStorage();
   setOpsCompactMode(false);
   renderStakeholderButtons();
-  renderAdjustmentStatusWall();
 
   if (el.editMainTargetBtn) {
     el.editMainTargetBtn.addEventListener("click", () => {
@@ -11244,6 +11437,8 @@ function init() {
   if (el.floatingTabSettingsBtn) {
     el.floatingTabSettingsBtn.addEventListener("click", () => {
       renderScheduleSourceStatus();
+      syncSchoolBindingControls();
+      renderSchoolBindingStatus();
       setFloatingTab("settings");
     });
   }
@@ -11289,6 +11484,49 @@ function init() {
       EventStorage.saveAdjustmentHistory(adjustmentHistory);
       renderHistoryList();
       alert("歷史異動資料已清空。");
+    });
+  }
+
+  if (el.settingsApplySchoolBtn) {
+    el.settingsApplySchoolBtn.addEventListener("click", async () => {
+      try {
+        const binding = readSchoolBindingFromForm();
+        await applySchoolBinding(binding, { saveBinding: true, reloadState: true });
+        alert(`已切換到 ${getSchoolLabel(currentSchoolBinding.schoolId)}，原始課表與歷史異動會使用該校資料。`);
+      } catch (err) {
+        console.error(err);
+        alert(`套用校別綁定失敗：${err && err.message ? err.message : "未知錯誤"}`);
+      }
+    });
+  }
+
+  if (el.settingsPullCloudBtn) {
+    el.settingsPullCloudBtn.addEventListener("click", async () => {
+      try {
+        renderSchoolBindingStatus("雲端同步中");
+        await pullSchoolDataFromCloud();
+        renderSchoolBindingStatus("雲端同步完成");
+        alert("已從雲端同步目前校別資料。");
+      } catch (err) {
+        console.error(err);
+        renderSchoolBindingStatus("雲端同步失敗");
+        alert(`雲端同步失敗：${err && err.message ? err.message : "未知錯誤"}`);
+      }
+    });
+  }
+
+  if (el.settingsPushCloudBtn) {
+    el.settingsPushCloudBtn.addEventListener("click", async () => {
+      try {
+        renderSchoolBindingStatus("雲端推送中");
+        await pushSchoolDataToCloud();
+        renderSchoolBindingStatus("雲端推送完成");
+        alert("已推送目前校別資料到雲端。\n包含原始課表、歷史異動與調動草稿。");
+      } catch (err) {
+        console.error(err);
+        renderSchoolBindingStatus("雲端推送失敗");
+        alert(`雲端推送失敗：${err && err.message ? err.message : "未知錯誤"}`);
+      }
     });
   }
 
@@ -11670,7 +11908,13 @@ function init() {
 }
 
 try {
-  init();
+  const initResult = init();
+  if (initResult && typeof initResult.catch === "function") {
+    initResult.catch((err) => {
+      console.error("TCv6 init failed:", err);
+      alert("TCv6 初始化失敗，請改用 Chrome 開啟，或用 Go Live。\n\n詳細錯誤請查看瀏覽器主控台（F12）。");
+    });
+  }
 } catch (err) {
   console.error("TCv6 init failed:", err);
   alert("TCv6 初始化失敗，請改用 Chrome 開啟，或用 Go Live。\n\n詳細錯誤請查看瀏覽器主控台（F12）。");

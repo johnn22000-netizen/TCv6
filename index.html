@@ -199,6 +199,30 @@
           <section id="floating-panel-settings" class="floating-panel-page" data-panel="settings">
             <div class="settings-panel">
               <div class="settings-block">
+                <h4 class="candidate-caption">校別綁定（A 校 / B 校）</h4>
+                <div class="settings-school-grid">
+                  <label>
+                    目前校別
+                    <select id="settings-school-select">
+                      <option value="A-school">A 校</option>
+                      <option value="B-school">B 校</option>
+                    </select>
+                  </label>
+                  <label>
+                    Apps Script Web App URL
+                    <input id="settings-backend-url" type="url" placeholder="https://script.google.com/macros/s/.../exec">
+                  </label>
+                </div>
+                <div class="settings-actions">
+                  <button id="settings-apply-school-btn" class="btn primary" type="button">套用校別綁定</button>
+                  <button id="settings-pull-cloud-btn" class="btn" type="button">從雲端同步</button>
+                  <button id="settings-push-cloud-btn" class="btn" type="button">推送到雲端</button>
+                </div>
+                <div id="settings-school-status" class="settings-status">目前校別：A 校</div>
+                <div class="settings-hint">資料放在 Google Drive，請先在雲端建立 A-school、B-school 子資料夾，再由 Web App 依 schoolId 分流讀寫。</div>
+              </div>
+
+              <div class="settings-block">
                 <h4 class="candidate-caption">原始課表來源</h4>
                 <div class="settings-actions">
                   <input id="settings-schedule-file" type="file" accept=".xls,.xlsx,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">

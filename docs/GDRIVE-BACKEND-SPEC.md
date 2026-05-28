@@ -110,6 +110,31 @@ listSchools()
 - 只供管理介面使用。
 - 回傳可用的 `schoolId` 與學校名稱。
 
+### 11. GitHub Pages 一次同步（建議）
+```js
+loadAll(schoolId)
+saveAll(schoolId, data)
+```
+- `loadAll`：一次回傳前端需要的資料包。
+  - `events`
+  - `adjustmentDrafts`
+  - `adjustmentHistory`
+  - `baseScheduleData`
+- `saveAll`：一次覆寫同一校的資料包，確保原始課表與歷史異動一致更新。
+
+建議回傳格式：
+```json
+{
+  "ok": true,
+  "data": {
+    "events": [],
+    "adjustmentDrafts": [],
+    "adjustmentHistory": [],
+    "baseScheduleData": null
+  }
+}
+```
+
 ## Web App 前後端分工
 - 前端負責顯示、編輯與送出資料。
 - Apps Script 負責驗證、讀寫 Google Drive、回傳資料。

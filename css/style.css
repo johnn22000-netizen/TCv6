@@ -550,6 +550,34 @@ textarea {
   background: #fff;
 }
 
+.settings-school-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.settings-school-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #334155;
+  font-size: 12px;
+}
+
+.settings-school-grid select,
+.settings-school-grid input {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 12px;
+}
+
+@media (max-width: 640px) {
+  .settings-school-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .settings-status {
   margin-top: 8px;
   color: #0f172a;
