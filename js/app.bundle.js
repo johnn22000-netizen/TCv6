@@ -8178,23 +8178,16 @@ function buildAcademicTermId(year, term) {
 
 function populateAcademicYearOptions() {
   if (!el.settingsAcademicYear) return;
-  const todayDate = new Date();
-  const currentRocYear = todayDate.getFullYear() - 1911;
-  const years = [];
-  for (let year = currentRocYear - 1; year <= currentRocYear + 5; year += 1) {
-    years.push(String(year));
+  const currentRocYear = String(new Date().getFullYear() - 1911);
+  if (!String(el.settingsAcademicYear.value || "").trim()) {
+    el.settingsAcademicYear.value = currentRocYear;
   }
-  el.settingsAcademicYear.innerHTML = years.map((year) => `<option value="${year}">${year}</option>`).join("");
 }
 
 function syncAcademicTermControls(termId) {
   const parsed = parseAcademicTermId(termId);
   if (!parsed) return;
   if (el.settingsAcademicYear) {
-    const hasYear = Array.from(el.settingsAcademicYear.options).some((option) => option.value === parsed.year);
-    if (!hasYear) {
-      el.settingsAcademicYear.insertAdjacentHTML("beforeend", `<option value="${parsed.year}">${parsed.year}</option>`);
-    }
     el.settingsAcademicYear.value = parsed.year;
   }
   if (el.settingsAcademicTerm) {
@@ -8302,6 +8295,13 @@ async function hydrateSchoolBindings() {
   currentSchoolBinding = SchoolBindingStorage.saveBinding(currentSchoolBinding);
 }
 
+async function refreshTermFoldersFromCloud() {
+  await hydrateSchoolBindings();
+  EventStorage.setActiveSchool(currentSchoolBinding.schoolId);
+  syncSchoolBindingControls();
+  renderSchoolBindingStatus();
+}
+
 function syncSchoolBindingControls() {
   if (el.settingsSchoolSelect) {
     const hasOption = Array.from(el.settingsSchoolSelect.options).some((option) => option.value === currentSchoolBinding.schoolId);
@@ -8327,13 +8327,25 @@ function renderSchoolBindingStatus(appendText = "") {
 
 function readSchoolBindingFromForm() {
   const selectedSchoolId = el.settingsSchoolSelect ? String(el.settingsSchoolSelect.value || "").trim() : "";
+  return normalizeSchoolBinding({
+    schoolId: selectedSchoolId || currentSchoolBinding.schoolId,
+    backendUrl: el.settingsBackendUrl ? el.settingsBackendUrl.value : currentSchoolBinding.backendUrl
+  });
+}
+
+function readNewTermIdFromForm({ required = false } = {}) {
   const selectedYear = el.settingsAcademicYear ? String(el.settingsAcademicYear.value || "").trim() : "";
   const selectedTerm = el.settingsAcademicTerm ? String(el.settingsAcademicTerm.value || "").trim() : "";
   const composedSchoolId = buildAcademicTermId(selectedYear, selectedTerm);
-  return normalizeSchoolBinding({
-    schoolId: composedSchoolId || selectedSchoolId || currentSchoolBinding.schoolId,
-    backendUrl: el.settingsBackendUrl ? el.settingsBackendUrl.value : currentSchoolBinding.backendUrl
-  });
+  if (!required) return composedSchoolId;
+
+  if (!selectedYear || !selectedTerm || !composedSchoolId) {
+    throw new Error("上傳新課表前，請先填寫學年與學期。");
+  }
+  if (!parseAcademicTermId(composedSchoolId)) {
+    throw new Error("學年/學期格式不正確，學年請填數字，例如 114。\n學期請選 暑假/第一學期/寒假/第二學期。");
+  }
+  return composedSchoolId;
 }
 
 function requestAutoCloudSync(reason = "") {
@@ -11689,7 +11701,12 @@ async function init() {
     });
   }
   if (el.floatingTabSettingsBtn) {
-    el.floatingTabSettingsBtn.addEventListener("click", () => {
+    el.floatingTabSettingsBtn.addEventListener("click", async () => {
+      try {
+        await refreshTermFoldersFromCloud();
+      } catch (err) {
+        console.error("refreshTermFoldersFromCloud failed:", err);
+      }
       renderScheduleSourceStatus();
       syncSchoolBindingControls();
       renderSchoolBindingStatus();
@@ -11760,7 +11777,7 @@ async function init() {
         renderSchoolBindingStatus("雲端同步中");
         await pullSchoolDataFromCloud();
         renderSchoolBindingStatus("雲端同步完成");
-        alert("已從雲端同步目前校別資料。");
+        alert("已從雲端同步目前學期資料夾資料。");
       } catch (err) {
         console.error(err);
         renderSchoolBindingStatus("雲端同步失敗");
@@ -11795,13 +11812,22 @@ async function init() {
       }
 
       try {
+        const nextTermId = readNewTermIdFromForm({ required: true });
+        if (nextTermId !== currentSchoolBinding.schoolId) {
+          const binding = normalizeSchoolBinding({
+            schoolId: nextTermId,
+            backendUrl: el.settingsBackendUrl ? el.settingsBackendUrl.value : currentSchoolBinding.backendUrl
+          });
+          await applySchoolBinding(binding, { saveBinding: true, reloadState: true });
+        }
+
         const arrayBuffer = await file.arrayBuffer();
         const data = await parseScheduleWorkbookArrayBuffer(arrayBuffer);
         applyBaseScheduleData(data, {
           persist: true,
-          sourceLabel: `自訂上傳課表：${file.name}`
+          sourceLabel: `自訂上傳課表：${file.name}（${currentSchoolBinding.schoolId}）`
         });
-        alert(`已載入課表：${file.name}`);
+        alert(`已載入課表：${file.name}\n學期資料夾：${getSchoolLabel(currentSchoolBinding.schoolId)}\n若雲端尚無此資料夾，系統會自動建立。`);
       } catch (err) {
         console.error(err);
         alert(`課表載入失敗：${err && err.message ? err.message : "未知錯誤"}`);
