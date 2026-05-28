@@ -200,15 +200,27 @@
             <div class="settings-panel">
               <div class="settings-block">
                 <h4 class="candidate-caption">原始課表來源</h4>
+                <div class="settings-school-grid">
+                  <label>
+                    新學期學年（上傳新課表必填）
+                    <input id="settings-academic-year" type="text" inputmode="numeric" placeholder="例如 114">
+                  </label>
+                  <label>
+                    新學期學期（上傳新課表必填）
+                    <select id="settings-academic-term">
+                      <option value="暑">暑假</option>
+                      <option value="1">第一學期</option>
+                      <option value="寒">寒假</option>
+                      <option value="2">第二學期</option>
+                    </select>
+                  </label>
+                </div>
                 <div class="settings-actions">
                   <input id="settings-schedule-file" type="file" accept=".xls,.xlsx,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
                   <button id="settings-load-file-btn" class="btn primary" type="button">載入選取檔案</button>
-                  <button id="settings-load-default-btn" class="btn" type="button">套用內建原始課表</button>
-                  <button id="settings-download-json-btn" class="btn" type="button">下載轉換後 JSON</button>
-                  <button id="settings-reset-source-btn" class="btn danger" type="button">還原內建來源</button>
                 </div>
-                <div id="settings-source-status" class="settings-status">目前使用：內建原始課表</div>
-                <div class="settings-hint">可直接載入你提供的 [1142課表.xlsx] 結構；系統會先轉成目前 TCv6 使用的 JSON 格式，再立即套用。</div>
+                <div id="settings-source-status" class="settings-status">目前使用：尚未設定原始課表</div>
+                <div class="settings-hint">上傳新學期課表時，請先填學年與學期（例如 114 + 第一學期 => 1141）。若該學期資料夾不存在，雲端會自動建立。</div>
               </div>
             </div>
           </section>

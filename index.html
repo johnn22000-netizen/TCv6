@@ -199,29 +199,6 @@
           <section id="floating-panel-settings" class="floating-panel-page" data-panel="settings">
             <div class="settings-panel">
               <div class="settings-block">
-                <h4 class="candidate-caption">學期資料夾綁定</h4>
-                <div class="settings-school-grid">
-                  <label>
-                    目前學期資料夾
-                    <select id="settings-school-select">
-                      <option value="">載入學期資料夾中</option>
-                    </select>
-                  </label>
-                  <label>
-                    Apps Script Web App URL
-                    <input id="settings-backend-url" type="url" placeholder="https://script.google.com/macros/s/.../exec">
-                  </label>
-                </div>
-                <div class="settings-actions">
-                  <button id="settings-apply-school-btn" class="btn primary" type="button">套用學期綁定</button>
-                  <button id="settings-pull-cloud-btn" class="btn" type="button">從雲端同步</button>
-                  <button id="settings-push-cloud-btn" class="btn" type="button">推送到雲端</button>
-                </div>
-                <div id="settings-school-status" class="settings-status">目前綁定：載入中</div>
-                <div class="settings-hint">既有資料夾會由雲端自動抓取；若要建立新學期，先選學年與學期，例如 114 + 第一學期 會建立為 1141。</div>
-              </div>
-
-              <div class="settings-block">
                 <h4 class="candidate-caption">原始課表來源</h4>
                 <div class="settings-school-grid">
                   <label>
@@ -241,12 +218,32 @@
                 <div class="settings-actions">
                   <input id="settings-schedule-file" type="file" accept=".xls,.xlsx,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
                   <button id="settings-load-file-btn" class="btn primary" type="button">載入選取檔案</button>
-                  <button id="settings-load-default-btn" class="btn" type="button">套用內建原始課表</button>
-                  <button id="settings-download-json-btn" class="btn" type="button">下載轉換後 JSON</button>
-                  <button id="settings-reset-source-btn" class="btn danger" type="button">還原內建來源</button>
                 </div>
-                <div id="settings-source-status" class="settings-status">目前使用：內建原始課表</div>
+                <div id="settings-source-status" class="settings-status">目前使用：尚未設定原始課表</div>
                 <div class="settings-hint">上傳新學期課表時，請先填學年與學期（例如 114 + 第一學期 => 1141）。若該學期資料夾不存在，雲端會自動建立。</div>
+              </div>
+
+              <div class="settings-block">
+                <h4 class="candidate-caption">學期資料夾綁定</h4>
+                <div class="settings-school-grid">
+                  <label>
+                    目前學期資料夾
+                    <select id="settings-school-select">
+                      <option value="">載入學期資料夾中</option>
+                    </select>
+                  </label>
+                  <label>
+                    Apps Script Web App URL
+                    <input id="settings-backend-url" type="url" placeholder="https://script.google.com/macros/s/.../exec">
+                  </label>
+                </div>
+                <div class="settings-actions">
+                  <button id="settings-apply-school-btn" class="btn primary" type="button">套用學期綁定</button>
+                  <button id="settings-pull-cloud-btn" class="btn" type="button">從雲端同步</button>
+                  <button id="settings-push-cloud-btn" class="btn" type="button">推送到雲端</button>
+                </div>
+                <div id="settings-school-status" class="settings-status">目前綁定：載入中</div>
+                <div class="settings-hint">既有資料夾會由雲端自動抓取，預設會以最新學期資料夾為目前學期；你也可以切換到前面學期操作。</div>
               </div>
             </div>
           </section>

@@ -103,12 +103,13 @@ importRawSchedule(schoolId, fileBlob)
 - 接受 Excel 或 JSON。
 - 解析後覆寫該校原始課表。
 
-### 10. 列出學校清單
+### 10. 列出學期資料夾
 ```js
-listSchools()
+listTerms()
 ```
 - 只供管理介面使用。
-- 回傳可用的 `schoolId` 與學校名稱。
+- 回傳可用的 `schoolId` 與學期顯示名稱。
+- 舊版也可用 `listFolders()` 或 `listSchools()`，但正式名稱以 `listTerms()` 為準。
 
 ### 11. GitHub Pages 一次同步（建議）
 ```js
