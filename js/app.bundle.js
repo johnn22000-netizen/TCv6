@@ -6826,6 +6826,7 @@ function validateEventInput(input) {
 const STORAGE_KEY_BASE = "tcv6_app_state_v1";
 const SCHOOL_BINDING_KEY = "tcv6_school_binding_v1";
 const DEFAULT_SCHOOL_ID = "A-school";
+const DEFAULT_BACKEND_URL = "https://script.google.com/macros/s/AKfycbyrwzj2NCwPTjNwj23xOPNShzIfiXFexsmy_MFlLd4tpeOuHesScqWjd0RVcBZfjVCXDQ/exec";
 
 function buildSchoolStorageKey(schoolId) {
   const normalized = String(schoolId || "").trim() || DEFAULT_SCHOOL_ID;
@@ -6901,6 +6902,7 @@ class EventStorage {
   static saveState(state) {
     const normalizedState = this.replaceCache(state);
     localStorage.setItem(this.activeStorageKey, JSON.stringify(normalizedState));
+    requestAutoCloudSync("state-save");
   }
 
   static loadAll() {
@@ -6981,14 +6983,14 @@ class EventStorage {
 function createDefaultSchoolBinding() {
   return {
     schoolId: DEFAULT_SCHOOL_ID,
-    backendUrl: ""
+    backendUrl: DEFAULT_BACKEND_URL
   };
 }
 
 function normalizeSchoolBinding(rawBinding) {
   const raw = rawBinding && typeof rawBinding === "object" ? rawBinding : {};
   const schoolId = String(raw.schoolId || "").trim() || DEFAULT_SCHOOL_ID;
-  const backendUrl = String(raw.backendUrl || "").trim();
+  const backendUrl = String(raw.backendUrl || "").trim() || DEFAULT_BACKEND_URL;
   return {
     schoolId,
     backendUrl
@@ -7488,6 +7490,11 @@ let exportLibsPromise = null;
 let spreadsheetImportLibPromise = null;
 let currentScheduleSourceLabel = "內建原始課表";
 let currentSchoolBinding = createDefaultSchoolBinding();
+let autoCloudSyncEnabled = false;
+let autoCloudSyncTimer = null;
+let autoCloudSyncInFlight = false;
+let autoCloudSyncPending = false;
+let isApplyingCloudPayload = false;
 const forcedSubstituteLinks = new Set();
 
 const STATUS_DEF = {
@@ -8161,6 +8168,73 @@ function readSchoolBindingFromForm() {
   });
 }
 
+function requestAutoCloudSync(reason = "") {
+  if (!autoCloudSyncEnabled) return;
+  if (!currentSchoolBinding || !String(currentSchoolBinding.backendUrl || "").trim()) return;
+  if (isApplyingCloudPayload) return;
+
+  if (autoCloudSyncTimer) {
+    clearTimeout(autoCloudSyncTimer);
+  }
+
+  autoCloudSyncTimer = setTimeout(async () => {
+    autoCloudSyncTimer = null;
+    if (autoCloudSyncInFlight) {
+      autoCloudSyncPending = true;
+      return;
+    }
+
+    autoCloudSyncInFlight = true;
+    try {
+      renderSchoolBindingStatus("自動上傳中");
+      await pushSchoolDataToCloud();
+      renderSchoolBindingStatus("自動上傳完成");
+    } catch (err) {
+      console.error(`Auto cloud sync failed (${reason}):`, err);
+      renderSchoolBindingStatus("自動上傳失敗");
+    } finally {
+      autoCloudSyncInFlight = false;
+      if (autoCloudSyncPending) {
+        autoCloudSyncPending = false;
+        requestAutoCloudSync("pending");
+      }
+    }
+  }, 900);
+}
+
+async function autoSyncFromCloudOnStartup() {
+  if (!currentSchoolBinding || !String(currentSchoolBinding.backendUrl || "").trim()) {
+    renderSchoolBindingStatus("未設定雲端 API");
+    return;
+  }
+
+  try {
+    renderSchoolBindingStatus("啟動同步中");
+    await pullSchoolDataFromCloud();
+    renderSchoolBindingStatus("啟動同步完成");
+  } catch (err) {
+    console.error("Startup cloud sync failed:", err);
+    renderSchoolBindingStatus("啟動同步失敗");
+    alert(`啟動時雲端同步失敗，先使用本機資料。\n${err && err.message ? err.message : "未知錯誤"}`);
+  }
+}
+
+function promptInitialScheduleUploadIfNeeded() {
+  const hasBaseSchedule = Boolean(
+    baseScheduleData &&
+    baseScheduleData.schedules &&
+    Object.keys(baseScheduleData.schedules).length
+  );
+  if (hasBaseSchedule) return;
+  if (!el.settingsScheduleFile) return;
+
+  const ok = confirm("此校雲端尚未建立原始課表，請先上傳 xlsx。是否現在上傳？");
+  if (!ok) return;
+
+  setFloatingTab("settings");
+  el.settingsScheduleFile.click();
+}
+
 async function loadStateFromActiveSchoolStorage() {
   const storedBaseScheduleData = EventStorage.loadBaseScheduleData();
   if (storedBaseScheduleData && storedBaseScheduleData.schedules) {
@@ -8241,10 +8315,15 @@ async function pullSchoolDataFromCloud() {
     throw new Error("雲端資料格式不正確");
   }
 
-  EventStorage.saveAll(Array.isArray(data.events) ? data.events : []);
-  EventStorage.saveAdjustmentDrafts(Array.isArray(data.adjustmentDrafts) ? data.adjustmentDrafts : []);
-  EventStorage.saveAdjustmentHistory(Array.isArray(data.adjustmentHistory) ? data.adjustmentHistory : []);
-  EventStorage.saveBaseScheduleData(data.baseScheduleData && typeof data.baseScheduleData === "object" ? data.baseScheduleData : null);
+  isApplyingCloudPayload = true;
+  try {
+    EventStorage.saveAll(Array.isArray(data.events) ? data.events : []);
+    EventStorage.saveAdjustmentDrafts(Array.isArray(data.adjustmentDrafts) ? data.adjustmentDrafts : []);
+    EventStorage.saveAdjustmentHistory(Array.isArray(data.adjustmentHistory) ? data.adjustmentHistory : []);
+    EventStorage.saveBaseScheduleData(data.baseScheduleData && typeof data.baseScheduleData === "object" ? data.baseScheduleData : null);
+  } finally {
+    isApplyingCloudPayload = false;
+  }
   await loadStateFromActiveSchoolStorage();
 }
 
@@ -11383,6 +11462,9 @@ async function init() {
   }
   el.anchorDate.value = today();
   await loadStateFromActiveSchoolStorage();
+  await autoSyncFromCloudOnStartup();
+  autoCloudSyncEnabled = true;
+  promptInitialScheduleUploadIfNeeded();
   setOpsCompactMode(false);
   renderStakeholderButtons();
 
@@ -11549,6 +11631,17 @@ async function init() {
         console.error(err);
         alert(`課表載入失敗：${err && err.message ? err.message : "未知錯誤"}`);
       }
+    });
+  }
+
+  if (el.settingsScheduleFile && el.settingsLoadFileBtn) {
+    el.settingsScheduleFile.addEventListener("change", () => {
+      const file = el.settingsScheduleFile.files && el.settingsScheduleFile.files[0]
+        ? el.settingsScheduleFile.files[0]
+        : null;
+      if (!file) return;
+      // 第一次開啟無雲端原始課表時，選完檔案立即套用並觸發自動上傳。
+      el.settingsLoadFileBtn.click();
     });
   }
 
