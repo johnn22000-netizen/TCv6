@@ -6825,7 +6825,7 @@ function validateEventInput(input) {
 /* ---- storage.js ---- */
 const STORAGE_KEY_BASE = "tcv6_app_state_v1";
 const SCHOOL_BINDING_KEY = "tcv6_school_binding_v1";
-const DEFAULT_SCHOOL_ID = "A-school";
+const DEFAULT_SCHOOL_ID = "default-term";
 const DEFAULT_BACKEND_URL = "https://script.google.com/macros/s/AKfycbyrwzj2NCwPTjNwj23xOPNShzIfiXFexsmy_MFlLd4tpeOuHesScqWjd0RVcBZfjVCXDQ/exec";
 
 function buildSchoolStorageKey(schoolId) {
@@ -7418,6 +7418,8 @@ const el = {
   settingsResetSourceBtn: document.getElementById("settings-reset-source-btn"),
   settingsSourceStatus: document.getElementById("settings-source-status"),
   settingsSchoolSelect: document.getElementById("settings-school-select"),
+  settingsAcademicYear: document.getElementById("settings-academic-year"),
+  settingsAcademicTerm: document.getElementById("settings-academic-term"),
   settingsBackendUrl: document.getElementById("settings-backend-url"),
   settingsApplySchoolBtn: document.getElementById("settings-apply-school-btn"),
   settingsPullCloudBtn: document.getElementById("settings-pull-cloud-btn"),
@@ -7490,6 +7492,7 @@ let exportLibsPromise = null;
 let spreadsheetImportLibPromise = null;
 let currentScheduleSourceLabel = "內建原始課表";
 let currentSchoolBinding = createDefaultSchoolBinding();
+let availableSchoolBindings = [];
 let autoCloudSyncEnabled = false;
 let autoCloudSyncTimer = null;
 let autoCloudSyncInFlight = false;
@@ -8139,18 +8142,179 @@ function renderScheduleSourceStatus() {
   el.settingsSourceStatus.textContent = `目前使用：${currentScheduleSourceLabel}${totalClasses ? `｜共 ${totalClasses} 班` : ""}`;
 }
 
+function formatAcademicTermLabel(termId) {
+  const raw = String(termId || "").trim();
+  if (!raw) return "未命名資料夾";
+  const match = raw.match(/^(\d{2,3})(暑|寒|1|2)$/);
+  if (!match) return raw;
+
+  const year = match[1];
+  const suffix = match[2];
+  const suffixMap = {
+    "暑": "暑假",
+    "1": "第一學期",
+    "寒": "寒假",
+    "2": "第二學期"
+  };
+  return `${year}學年度${suffixMap[suffix] || raw}`;
+}
+
+function parseAcademicTermId(termId) {
+  const raw = String(termId || "").trim();
+  const match = raw.match(/^(\d{2,3})(暑|寒|1|2)$/);
+  if (!match) return null;
+  return {
+    year: match[1],
+    term: match[2]
+  };
+}
+
+function buildAcademicTermId(year, term) {
+  const y = String(year || "").trim();
+  const t = String(term || "").trim();
+  if (!y || !t) return "";
+  return `${y}${t}`;
+}
+
+function populateAcademicYearOptions() {
+  if (!el.settingsAcademicYear) return;
+  const todayDate = new Date();
+  const currentRocYear = todayDate.getFullYear() - 1911;
+  const years = [];
+  for (let year = currentRocYear - 1; year <= currentRocYear + 5; year += 1) {
+    years.push(String(year));
+  }
+  el.settingsAcademicYear.innerHTML = years.map((year) => `<option value="${year}">${year}</option>`).join("");
+}
+
+function syncAcademicTermControls(termId) {
+  const parsed = parseAcademicTermId(termId);
+  if (!parsed) return;
+  if (el.settingsAcademicYear) {
+    const hasYear = Array.from(el.settingsAcademicYear.options).some((option) => option.value === parsed.year);
+    if (!hasYear) {
+      el.settingsAcademicYear.insertAdjacentHTML("beforeend", `<option value="${parsed.year}">${parsed.year}</option>`);
+    }
+    el.settingsAcademicYear.value = parsed.year;
+  }
+  if (el.settingsAcademicTerm) {
+    el.settingsAcademicTerm.value = parsed.term;
+  }
+}
+
+function ensureBindingOptionExists(schoolId) {
+  const normalized = String(schoolId || "").trim();
+  if (!normalized) return;
+  const exists = availableSchoolBindings.some((item) => item.schoolId === normalized);
+  if (!exists) {
+    availableSchoolBindings.push({ schoolId: normalized, name: formatAcademicTermLabel(normalized) });
+    setAvailableSchoolBindings(availableSchoolBindings);
+  }
+}
+
 function getSchoolLabel(schoolId) {
-  if (schoolId === "B-school") return "B 校";
-  return "A 校";
+  const found = availableSchoolBindings.find((item) => item.schoolId === schoolId);
+  if (found && found.name) return found.name;
+  return formatAcademicTermLabel(schoolId);
+}
+
+function normalizeBindingOption(item) {
+  if (typeof item === "string") {
+    const schoolId = String(item || "").trim();
+    return schoolId
+      ? { schoolId, name: formatAcademicTermLabel(schoolId) }
+      : null;
+  }
+
+  if (!item || typeof item !== "object") return null;
+  const schoolId = String(item.schoolId || item.termId || item.folderName || item.name || "").trim();
+  if (!schoolId) return null;
+  const name = String(item.name || item.label || formatAcademicTermLabel(schoolId)).trim() || formatAcademicTermLabel(schoolId);
+  return { schoolId, name };
+}
+
+function setAvailableSchoolBindings(bindings) {
+  availableSchoolBindings = Array.isArray(bindings)
+    ? bindings.map(normalizeBindingOption).filter(Boolean)
+    : [];
+
+  if (!el.settingsSchoolSelect) return;
+
+  if (!availableSchoolBindings.length) {
+    el.settingsSchoolSelect.innerHTML = '<option value="">目前抓不到學期資料夾</option>';
+    return;
+  }
+
+  el.settingsSchoolSelect.innerHTML = availableSchoolBindings
+    .map((item) => `<option value="${item.schoolId}">${item.name}</option>`)
+    .join("");
+}
+
+async function fetchAvailableSchoolBindings() {
+  const backendUrl = String((currentSchoolBinding && currentSchoolBinding.backendUrl) || DEFAULT_BACKEND_URL || "").trim();
+  if (!backendUrl) return [];
+
+  const actions = ["listTerms", "listFolders", "listSchools"];
+  for (const action of actions) {
+    try {
+      const requestUrl = new URL(backendUrl);
+      requestUrl.searchParams.set("action", action);
+      const response = await fetch(requestUrl, {
+        method: "GET",
+        credentials: "omit"
+      });
+      if (!response.ok) continue;
+
+      const payload = await response.json();
+      if (payload && payload.ok === false) continue;
+      const data = payload && Array.isArray(payload.data) ? payload.data : Array.isArray(payload) ? payload : [];
+      const bindings = data.map(normalizeBindingOption).filter(Boolean);
+      if (bindings.length) return bindings;
+    } catch (_) {
+      // try next action
+    }
+  }
+
+  return [];
+}
+
+async function hydrateSchoolBindings() {
+  const bindings = await fetchAvailableSchoolBindings();
+  setAvailableSchoolBindings(bindings);
+
+  if (!availableSchoolBindings.length) {
+    return;
+  }
+
+  const matched = availableSchoolBindings.find((item) => item.schoolId === currentSchoolBinding.schoolId);
+  if (matched) {
+    currentSchoolBinding = normalizeSchoolBinding({
+      schoolId: matched.schoolId,
+      backendUrl: currentSchoolBinding.backendUrl
+    });
+    return;
+  }
+
+  currentSchoolBinding = normalizeSchoolBinding({
+    schoolId: availableSchoolBindings[0].schoolId,
+    backendUrl: currentSchoolBinding.backendUrl
+  });
+  currentSchoolBinding = SchoolBindingStorage.saveBinding(currentSchoolBinding);
 }
 
 function syncSchoolBindingControls() {
   if (el.settingsSchoolSelect) {
+    const hasOption = Array.from(el.settingsSchoolSelect.options).some((option) => option.value === currentSchoolBinding.schoolId);
+    if (!hasOption && currentSchoolBinding.schoolId) {
+      const label = getSchoolLabel(currentSchoolBinding.schoolId);
+      el.settingsSchoolSelect.insertAdjacentHTML("beforeend", `<option value="${currentSchoolBinding.schoolId}">${label}</option>`);
+    }
     el.settingsSchoolSelect.value = currentSchoolBinding.schoolId;
   }
   if (el.settingsBackendUrl) {
     el.settingsBackendUrl.value = currentSchoolBinding.backendUrl || "";
   }
+  syncAcademicTermControls(currentSchoolBinding.schoolId);
 }
 
 function renderSchoolBindingStatus(appendText = "") {
@@ -8158,12 +8322,16 @@ function renderSchoolBindingStatus(appendText = "") {
   const schoolLabel = getSchoolLabel(currentSchoolBinding.schoolId);
   const backendState = currentSchoolBinding.backendUrl ? "已設定雲端 API" : "未設定雲端 API";
   const suffix = appendText ? `｜${appendText}` : "";
-  el.settingsSchoolStatus.textContent = `目前校別：${schoolLabel}（${currentSchoolBinding.schoolId}）｜${backendState}${suffix}`;
+  el.settingsSchoolStatus.textContent = `目前綁定：${schoolLabel}（${currentSchoolBinding.schoolId}）｜${backendState}${suffix}`;
 }
 
 function readSchoolBindingFromForm() {
+  const selectedSchoolId = el.settingsSchoolSelect ? String(el.settingsSchoolSelect.value || "").trim() : "";
+  const selectedYear = el.settingsAcademicYear ? String(el.settingsAcademicYear.value || "").trim() : "";
+  const selectedTerm = el.settingsAcademicTerm ? String(el.settingsAcademicTerm.value || "").trim() : "";
+  const composedSchoolId = buildAcademicTermId(selectedYear, selectedTerm);
   return normalizeSchoolBinding({
-    schoolId: el.settingsSchoolSelect ? el.settingsSchoolSelect.value : currentSchoolBinding.schoolId,
+    schoolId: composedSchoolId || selectedSchoolId || currentSchoolBinding.schoolId,
     backendUrl: el.settingsBackendUrl ? el.settingsBackendUrl.value : currentSchoolBinding.backendUrl
   });
 }
@@ -8219,18 +8387,19 @@ async function autoSyncFromCloudOnStartup() {
   }
 }
 
-function promptInitialScheduleUploadIfNeeded() {
-  const hasBaseSchedule = Boolean(
+function hasBaseScheduleData() {
+  return Boolean(
     baseScheduleData &&
     baseScheduleData.schedules &&
     Object.keys(baseScheduleData.schedules).length
   );
-  if (hasBaseSchedule) return;
+}
+
+function promptInitialScheduleUploadIfNeeded() {
+  if (hasBaseScheduleData()) return;
   if (!el.settingsScheduleFile) return;
 
-  const ok = confirm("此校雲端尚未建立原始課表，請先上傳 xlsx。是否現在上傳？");
-  if (!ok) return;
-
+  alert(`學期資料夾 ${getSchoolLabel(currentSchoolBinding.schoolId)} 目前沒有原始課表，請先上傳課表後才能使用。`);
   setFloatingTab("settings");
   el.settingsScheduleFile.click();
 }
@@ -8361,6 +8530,7 @@ async function pushSchoolDataToCloud() {
 
 async function applySchoolBinding(binding, { saveBinding = true, reloadState = true } = {}) {
   currentSchoolBinding = normalizeSchoolBinding(binding);
+  ensureBindingOptionExists(currentSchoolBinding.schoolId);
   if (saveBinding) {
     currentSchoolBinding = SchoolBindingStorage.saveBinding(currentSchoolBinding);
   }
@@ -8369,6 +8539,9 @@ async function applySchoolBinding(binding, { saveBinding = true, reloadState = t
   renderSchoolBindingStatus();
   if (reloadState) {
     await loadStateFromActiveSchoolStorage();
+    if (!hasBaseScheduleData()) {
+      promptInitialScheduleUploadIfNeeded();
+    }
   }
 }
 
@@ -11450,6 +11623,8 @@ function loadSeed() {
 
 async function init() {
   currentSchoolBinding = SchoolBindingStorage.loadBinding();
+  populateAcademicYearOptions();
+  await hydrateSchoolBindings();
   EventStorage.setActiveSchool(currentSchoolBinding.schoolId);
   syncSchoolBindingControls();
   renderSchoolBindingStatus();
@@ -11571,10 +11746,10 @@ async function init() {
       try {
         const binding = readSchoolBindingFromForm();
         await applySchoolBinding(binding, { saveBinding: true, reloadState: true });
-        alert(`已切換到 ${getSchoolLabel(currentSchoolBinding.schoolId)}，原始課表與歷史異動會使用該校資料。`);
+        alert(`已切換到 ${getSchoolLabel(currentSchoolBinding.schoolId)}，原始課表與歷史異動會使用這個學期資料夾。`);
       } catch (err) {
         console.error(err);
-        alert(`套用校別綁定失敗：${err && err.message ? err.message : "未知錯誤"}`);
+        alert(`套用學期綁定失敗：${err && err.message ? err.message : "未知錯誤"}`);
       }
     });
   }
