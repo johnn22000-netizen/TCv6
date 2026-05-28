@@ -8190,11 +8190,20 @@ function hasBaseScheduleData() {
   );
 }
 
+function ensureUf2PanelVisible() {
+  if (!el.slotCandidatePanel) return;
+  el.slotCandidatePanel.classList.remove("hidden");
+  if (slotPanelPinned) {
+    resetSlotPanelPosition();
+  }
+}
+
 function promptInitialScheduleUploadIfNeeded() {
   if (hasBaseScheduleData()) return;
   if (!el.settingsScheduleFile) return;
 
   alert(`學期資料夾 ${getSchoolLabel(currentSchoolBinding.schoolId)} 目前沒有原始課表，請先上傳課表後才能使用。`);
+  ensureUf2PanelVisible();
   setFloatingTab("settings");
   el.settingsScheduleFile.click();
 }
@@ -8275,7 +8284,16 @@ async function pullSchoolDataFromCloud() {
     throw new Error(String(payload.message || "雲端回傳失敗"));
   }
 
-  const data = payload && payload.data ? payload.data : payload;
+  const responseData = payload && payload.data ? payload.data : payload;
+  const nestedData = responseData && responseData.data ? responseData.data : null;
+  const data = nestedData && (
+    Array.isArray(nestedData.events) ||
+    Array.isArray(nestedData.adjustmentDrafts) ||
+    Array.isArray(nestedData.adjustmentHistory) ||
+    Object.prototype.hasOwnProperty.call(nestedData, "baseScheduleData")
+  )
+    ? nestedData
+    : responseData;
   if (!data || typeof data !== "object") {
     throw new Error("雲端資料格式不正確");
   }
