@@ -202,6 +202,24 @@
                 <h4 class="candidate-caption">原始課表來源</h4>
                 <div class="settings-school-grid">
                   <label>
+                    目前學期資料夾
+                    <select id="settings-school-select">
+                      <option value="">目前抓不到學期資料夾</option>
+                    </select>
+                  </label>
+                  <label>
+                    雲端 API URL
+                    <input id="settings-backend-url" type="url" placeholder="https://script.google.com/macros/s/.../exec">
+                  </label>
+                </div>
+                <div class="settings-actions">
+                  <button id="settings-apply-school-btn" class="btn" type="button">套用學期綁定</button>
+                  <button id="settings-pull-cloud-btn" class="btn" type="button">從雲端載入</button>
+                  <button id="settings-push-cloud-btn" class="btn" type="button">推送到雲端</button>
+                </div>
+                <div id="settings-school-status" class="settings-status">目前綁定：尚未設定</div>
+                <div class="settings-school-grid">
+                  <label>
                     新學期學年（上傳新課表必填）
                     <input id="settings-academic-year" type="text" inputmode="numeric" placeholder="例如 114">
                   </label>

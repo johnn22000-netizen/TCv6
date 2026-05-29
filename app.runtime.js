@@ -4977,7 +4977,7 @@ async function init() {
   el.anchorDate.value = today();
   await loadStateFromActiveSchoolStorage();
   await autoSyncFromCloudOnStartup();
-  autoCloudSyncEnabled = false;
+  autoCloudSyncEnabled = Boolean(String(currentSchoolBinding.backendUrl || "").trim());
   promptInitialScheduleUploadIfNeeded();
   setOpsCompactMode(false);
   renderStakeholderButtons();

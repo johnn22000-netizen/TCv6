@@ -1,0 +1,6733 @@
+{
+  "schoolId": "1142",
+  "updatedAt": "2026-05-29T09:22:01.849Z",
+  "data": {
+    "events": [],
+    "adjustmentDrafts": [
+      {
+        "id": "adj_1780046518602_aq1048",
+        "createdAt": "2026/5/29 下午5:21:58",
+        "anchorDate": "2026-05-29",
+        "chain": [
+          {
+            "boardIndex": 0,
+            "boardTarget": "沈明穎",
+            "from": {
+              "className": "八愛",
+              "teacher": "沈明穎",
+              "subject": "公民",
+              "date": "2026-05-25",
+              "period": 1
+            },
+            "fromLabel": "5/25(週一) 八愛 1節 公民",
+            "to": null,
+            "toLabel": "陳凱琳",
+            "type": "代課",
+            "id": "adj_chain_0_0_1780046518628_9cim45"
+          }
+        ]
+      }
+    ],
+    "adjustmentHistory": [],
+    "baseScheduleData": {
+      "version": "1.0",
+      "lastUpdated": "2026-05-29T09:14:07.422Z",
+      "totalClasses": 27,
+      "schedules": {
+        "十二信": {
+          "一1": {
+            "subject": "數學",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "美術",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "地理",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "地理",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "歷史",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "公民",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "國文",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "英文",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "自主研習",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "英文",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "美術",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "歷史",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "體育",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "地理",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "數學",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "國文",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "公民",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "公民",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "公民",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "全民國防",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "國文",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "音樂",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "歷史",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "自主研習",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "數學",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "數學",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "生活科技",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "數學",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "數學",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "地理",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "國文",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "公民",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "音樂",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "歷史",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "全民國防",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "資訊",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "歷史",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "英文",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "體育",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "體育",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "地理",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "生涯規劃",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "自主研習",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "十二望": {
+          "一1": {
+            "subject": "音樂",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "數學",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "生物",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "英文",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "生物",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "國文",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "生涯規劃",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "美術",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "自主研習",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "化學",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "化學",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "物理",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "體育",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "物理",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "國文",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "英文",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "數學",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "全民國防",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "生物",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "生活科技",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "國文",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "國文",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "英文",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "全民國防",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "數學",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "數學",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "自主研習",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "數學",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "數學",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "英文",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "資訊",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "生物",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "生物",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "音樂",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "美術",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "自主研習",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "物理",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "物理",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "體育",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "體育",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "化學",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "化學",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "自主研習",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "十二愛": {
+          "一1": {
+            "subject": "數學",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "生物",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "全民國防",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "英文",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "美術",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "生物",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "音樂",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "國文",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "自主研習",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "物理",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "物理",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "化學",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "體育",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "化學",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "數學",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "全民國防",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "音樂",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "英文",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "生活科技",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "國文",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "生物",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "生物",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "英文",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "國文",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "數學",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "數學",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "自主研習",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "數學",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "數學",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "資訊",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "國文",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "英文",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "生涯規劃",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "美術",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "生物",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "自主研習",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "化學",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "化學",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "體育",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "體育",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "物理",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "物理",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "自主研習",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "十一信": {
+          "一1": {
+            "subject": "地理",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "英文",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "國文",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "音樂",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "公民",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "國文",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "數學",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "數學",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "歷史",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "公民",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "地理",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "國文",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "國文",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "歷史",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "歷史",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "英文",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "英文",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "數學",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "地理",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "英文",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "英文",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "數學",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "體育",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "體育",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "公民",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "歷史",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "國文",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "歷史",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "國文",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "校訂必修",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "校訂必修",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "自主學習",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "英文",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "數學",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "地理",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "地理",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "數學",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "地理",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "公民",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "公民",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "英文",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "歷史",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "國文",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "十一望": {
+          "一1": {
+            "subject": "英文",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "物理",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "歷史",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "國文",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "化學",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "地理",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "數學",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "數學",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "地球科學",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "音樂",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "化學",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "化學",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "國文",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "英文",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "英文",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "歷史",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "物理",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "數學",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "國文",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "物理",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "化學",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "數學",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "體育",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "體育",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "英文",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "生物",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "生物",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "生物",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "英文",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "校訂必修",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "校訂必修",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "自主學習",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "化學",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "數學",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "地球科學",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "國文",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "數學",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "英文",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "國文",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "國文",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "物理",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "生物",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "地理",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "十一愛": {
+          "一1": {
+            "subject": "生物",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "國文",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "英文",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "英文",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "物理",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "物理",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "數學",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "數學",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "歷史",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "地球科學",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "英文",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "生物",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "生物",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "音樂",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "地理",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "國文",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "國文",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "數學",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "物理",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "化學",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "化學",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "數學",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "體育",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "體育",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "英文",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "國文",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "地球科學",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "國文",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "英文",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "校訂必修",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "校訂必修",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "自主學習",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "地理",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "數學",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "英文",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "物理",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "數學",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "化學",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "化學",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "化學",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "歷史",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "國文",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "生物",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "十信": {
+          "一1": {
+            "subject": "國文",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "國文\r\n本土語言",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "數學",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "數學",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "體育",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "體育",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "地球科學",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "國文",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "公民",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "國文",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "英文",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "歷史",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "英文",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "財政法",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "財政法",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "數學",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "地理",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "生涯規劃\r\n國文",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "數學",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "數學",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "外語選修",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "外語選修",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "地理",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "國文",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "英文",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "生物",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "歷史",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "英文",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "公民",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "化學",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "國文",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "物理",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "生物",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "歷史",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "數學",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "英文",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "國文",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "數學",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "多元選修",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "多元選修",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "地理",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "公民",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "國文",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "十望": {
+          "一1": {
+            "subject": "國文",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "生涯規劃\r\n國文",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "數學",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "數學",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "體育",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "體育",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "物理",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "英文",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "化學",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "公民",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "物理",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "英文",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "英文",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "地理",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "國文",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "數學",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "生物",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "歷史",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "數學",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "數學",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "外語選修",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "外語選修",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "生物",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "國文",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "國文\r\n本土語言",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "英文",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "化學",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "地理",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "物理",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "國文",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "公民",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "英文",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "化學",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "英文",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "數學",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "地球科學",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "英文",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "數學",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "多元選修",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "多元選修",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "歷史",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "生物",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "國文",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "十愛": {
+          "一1": {
+            "subject": "英文",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "英文",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "數學",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "數學",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "體育",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "體育",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "國文",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "生物",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "物理",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "歷史",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "生涯規劃\r\n國文",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "國文",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "化學",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "英文",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "英文",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "數學",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "地理",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "地球科學",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "數學",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "數學",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "外語選修",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "外語選修",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "地理",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "物理",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "公民",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "英文",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "國文",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "國文",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "國文\r\n本土語言",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "生物",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "生物",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "英文",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "公民",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "化學",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "數學",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "歷史",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "物理",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "數學",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "多元選修",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "多元選修",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "國文",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "英文",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "化學",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "九信": {
+          "一1": {
+            "subject": "地理",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "歷史",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "數學",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "化學",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "國文",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "表演藝術",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "公民",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "生物",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "英文",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "英文小組",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "公民",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "物理",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "數學",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "體育",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "體育",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "國文",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "AI課程",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "AI課程",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "數學",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "英文",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "英文",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "國文",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "特色課程",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "特色課程",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "特色課程",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "特色課程",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "導師時間及放學",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "化學",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "地球科學",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "英文小組",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "輔導\r\n英文",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "物理",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "資訊",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "視覺藝術\r\n英文",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "國文",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "數學",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "國文",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "英文",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "多元選修",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "多元選修",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "地理",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "數學",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "歷史",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "九望": {
+          "一1": {
+            "subject": "物理",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "化學",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "英文",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "公民",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "地理",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "數學",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "國文",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "AI課程",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "AI課程",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "英文",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "英文小組",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "數學",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "地理",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "體育",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "體育",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "輔導\r\n英文",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "歷史",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "國文",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "國文",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "數學",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "英文",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "物理",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "特色課程",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "特色課程",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "特色課程",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "特色課程",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "導師時間及放學",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "地球科學",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "數學",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "國文",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "生物",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "表演藝術",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "歷史",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "公民",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "資訊",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "視覺藝術\r\n英文",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "國文",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "英文小組",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "多元選修",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "多元選修",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "數學",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "英文",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "化學",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "九愛": {
+          "一1": {
+            "subject": "歷史",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "視覺藝術\r\n英文",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "公民",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "英文",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "表演藝術",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "地球科學",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "數學",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "化學",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "國文",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "輔導\r\n英文",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "國文",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "英文小組",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "物理",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "體育",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "體育",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "地理",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "數學",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "數學",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "化學",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "英文",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "數學",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "國文",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "特色課程",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "特色課程",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "特色課程",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "特色課程",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "導師時間及放學",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "公民",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "數學",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "歷史",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "地理",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "資訊",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "英文",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "英文",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "物理",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "國文",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "英文小組",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "國文",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "多元選修",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "多元選修",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "生物",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "AI課程",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "AI課程",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "九仁": {
+          "一1": {
+            "subject": "理化",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "理化",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "公民",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "英語",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "數學",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "數學",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "國文",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "國文",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "自主研習",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "數學",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "國文",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "歷史",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "生物",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "健康與體育",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "健康與體育",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "公民",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "英語",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "理化",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "英語",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "數學",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "數學",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "視覺藝術",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "地球科學",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "理化",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "地理",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "輔導\r\n國文",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "國文",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "國文",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "理化",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "生活科技",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "數學",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "地球科學",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "地理",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "英語",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "歷史",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "自主研習",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "生物",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "音樂\r\n國文",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "理化",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "國文",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "數學",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "英語",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "英語",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "九勇": {
+          "一1": {
+            "subject": "公民",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "生物",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "英語",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "歷史",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "數學",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "數學",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "國文",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "理化",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "自主研習",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "英語",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "歷史",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "理化",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "理化",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "健康與體育",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "健康與體育",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "國文",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "國文",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "數學",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "地理",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "地球科學",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "英語",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "英語",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "視覺藝術",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "公民",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "理化",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "數學",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "輔導\r\n國文",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "生活科技",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "國文",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "數學",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "數學",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "英語",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "地球科學",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "理化",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "音樂\r\n國文",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "自主研習",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "國文",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "國文",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "數學",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "理化",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "英語",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "生物",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "地理",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "九智": {
+          "一1": {
+            "subject": "歷史",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "英語",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "國文",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "國文",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "理化",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "地理",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "數學",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "生物",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "自主研習",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "理化",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "音樂\r\n國文",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "數學",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "數學",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "健康與體育",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "健康與體育",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "輔導\r\n國文",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "公民",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "英語",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "生物",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "英語",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "理化",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "理化",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "國文",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "國文",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "歷史",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "地球科學",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "數學",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "國文",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "生活科技",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "英語",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "英語",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "數學",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "數學",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "公民",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "理化",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "自主研習",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "數學",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "地球科學",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "視覺藝術",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "地理",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "班週會",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "理化",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "英語",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "國文",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "八信": {
+          "一1": {
+            "subject": "數學",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "數學",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "英語",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "國文",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "視覺藝術",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "公民",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "理化",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "理化",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "導師時間及放學",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "地理",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "英語",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "專題研究\r\nReady to Write",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "專題研究\r\n閱讀指導",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "歷史",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "數學",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "國文",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "國文",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "理化",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "數學",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "本土語言\r\n國文",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "理化",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "英文",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "國文\r\n音樂",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "生活科技",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "地理",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "科學實驗\r\nReady to Write",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "科學實驗\r\n導師時間及放學",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "英語",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "英語",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "數學",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "歷史",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "健康與體育",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "健康與體育",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "輔導活動",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "理化",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "國文",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "國文",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "地理",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "理化",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "數學",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "資訊",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "英語",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "數學之旅\r\n導師時間及放學",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "八望": {
+          "一1": {
+            "subject": "理化",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "理化",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "生活科技",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "英語",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "數學",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "視覺藝術",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "輔導活動",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "國文",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "導師時間及放學",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "歷史",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "公民",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "專題研究\r\nReady to Write",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "專題研究\r\n閱讀指導",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "英語",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "國文\r\n音樂",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "本土語言\r\n國文",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "理化",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "數學",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "地理",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "英語",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "國文",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "數學",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "國文",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "資訊",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "理化",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "科學實驗\r\nReady to Write",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "科學實驗\r\n導師時間及放學",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "國文",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "理化",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "數學",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "數學",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "健康與體育",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "健康與體育",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "英語",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "英語",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "歷史",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "公民",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "數學",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "國文",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "地理",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "理化",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "英語",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "數學之旅\r\n導師時間及放學",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "八愛": {
+          "一1": {
+            "subject": "公民",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "輔導活動",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "國文",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "生活科技",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "地理",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "數學",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "理化",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "英語",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "導師時間及放學",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "國文",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "數學",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "專題研究\r\n閱讀指導",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "專題研究\r\nReady to Write",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "英語",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "英語",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "歷史",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "理化",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "數學之旅\r\n導師時間及放學",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "英語",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "理化",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "資訊",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "數學",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "視覺藝術",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "歷史",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "國文",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "國文",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "地理",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "理化",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "理化",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "國文",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "數學",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "健康與體育",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "健康與體育",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "英語",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "科學實驗\r\nReady to Write",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "科學實驗\r\n導師時間及放學",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "英語",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "本土語言\r\n國文",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "理化",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "國文\r\n音樂",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "數學",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "數學",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "公民",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "八仁": {
+          "一1": {
+            "subject": "生活科技",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "英語",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "國文",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "數學",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "理化",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "理化",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "視覺藝術",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "國文\r\n音樂",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "導師時間及放學",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "理化",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "英語",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "專題研究\r\n閱讀指導",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "專題研究\r\nReady to Write",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "輔導活動",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "數學",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "國文",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "本土語言\r\n國文",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "數學之旅\r\n導師時間及放學",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "國文",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "理化",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "英語",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "資訊",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "歷史",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "公民",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "英語",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "數學",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "數學",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "地理",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "國文",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "理化",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "英語",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "健康與體育",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "健康與體育",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "數學",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "科學實驗\r\nReady to Write",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "科學實驗\r\n導師時間及放學",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "地理",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "英語",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "數學",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "歷史",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "公民",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "國文",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "理化",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "八勇": {
+          "一1": {
+            "subject": "國文",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "國文",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "理化",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "數學",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "資訊",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "輔導活動",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "歷史",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "英語",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "導師時間及放學",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "地理",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "本土語言\r\n國文",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "專題研究\r\n閱讀指導",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "專題研究\r\nReady to Write",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "公民",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "英語",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "數學",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "理化",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "數學之旅\r\n導師時間及放學",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "數學",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "數學",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "理化",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "理化",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "生活科技",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "視覺藝術",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "國文",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "英語",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "公民",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "理化",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "英語",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "英語",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "國文",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "健康與體育",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "健康與體育",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "數學",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "科學實驗\r\nReady to Write",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "科學實驗\r\n導師時間及放學",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "英語",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "歷史",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "地理",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "數學",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "國文\r\n音樂",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "理化",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "國文",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "八智": {
+          "一1": {
+            "subject": "國文",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "公民",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "英語",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "輔導活動",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "理化",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "數學",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "生活科技",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "數學",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "導師時間及放學",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "理化",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "理化",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "專題研究\r\nReady to Write",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "專題研究\r\n閱讀指導",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "數學",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "地理",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "英語",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "國文",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "國文",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "公民",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "理化",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "數學",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "國文",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "資訊",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "英語",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "視覺藝術",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "科學實驗\r\nReady to Write",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "科學實驗\r\n導師時間及放學",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "數學",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "國文",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "英語",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "公民",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "健康與體育",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "健康與體育",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "歷史",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "英語",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "理化",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "歷史",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "理化",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "英語",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "數學",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "本土語言\r\n國文",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "國文\r\n音樂",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "數學之旅\r\n導師時間及放學",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "七信": {
+          "一1": {
+            "subject": "國文",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "生物",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "地理",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "數學",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "生活科技",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "數學之旅\r\n社會專題",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "國文",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "英語",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "導師時間及放學",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "科學實驗\r\nReading Peak",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "科學實驗\r\n數位創意",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "健康與體育",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "國文",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "英語\r\n表演藝術",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "英語",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "公民",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "數學",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "導師時間及放學",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "生物",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "數學",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "健康與體育",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "健康與體育",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "歷史",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "地理",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "輔導活動\r\n英語",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "國文",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "導師時間及放學",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "國文\r\n本土語言",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "音樂\r\n國文",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "專題研究\r\nReading Peak",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "專題研究\r\n閱讀指導",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "英語",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "歷史",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "生物",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "數學",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "導師時間及放學",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "數學",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "資訊",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "英語",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "國文",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "數學",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "視覺藝術",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "導師時間及放學",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "七望": {
+          "一1": {
+            "subject": "英語",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "歷史",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "資訊",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "國文\r\n本土語言",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "數學",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "數學之旅\r\n社會專題",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "公民",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "地理",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "導師時間及放學",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "科學實驗\r\nReading Peak",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "科學實驗\r\n數位創意",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "英語",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "生物",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "國文",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "音樂\r\n國文",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "數學",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "英語\r\n表演藝術",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "導師時間及放學",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "國文",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "生物",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "健康與體育",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "健康與體育",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "英語",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "輔導活動\r\n英語",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "歷史",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "數學",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "地理",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "數學",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "數學",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "專題研究\r\nReading Peak",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "專題研究\r\n閱讀指導",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "生物",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "英語",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "生活科技",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "國文",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "導師時間及放學",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "數學",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "健康與體育",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "英語",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "視覺藝術",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "國文",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "國文",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "導師時間及放學",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "七愛": {
+          "一1": {
+            "subject": "英語",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "生物",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "數學",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "資訊",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "公民",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "視覺藝術",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "數學之旅\r\n閱讀指導",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "音樂\r\n國文",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "導師時間及放學",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "專題研究\r\n數位創意",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "專題研究\r\nReading Peak",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "數學",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "歷史",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "國文",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "地理",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "英語",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "生活科技",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "導師時間及放學",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "歷史",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "數學",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "健康與體育",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "健康與體育",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "生物",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "國文",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "英語\r\n表演藝術",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "英語",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "導師時間及放學",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "數學",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "英語",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "科學實驗\r\n社會專題",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "科學實驗\r\nReading Peak",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "數學",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "輔導活動\r\n英語",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "生物",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "國文",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "國文",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "英語",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "健康與體育",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "國文\r\n本土語言",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "國文",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "數學",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "地理",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "導師時間及放學",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "七仁": {
+          "一1": {
+            "subject": "數學",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "國文",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "英語",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "生物",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "地理",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "國文\r\n本土語言",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "數學之旅\r\n閱讀指導",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "英語\r\n表演藝術",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "導師時間及放學",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "專題研究\r\n數位創意",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "專題研究\r\nReading Peak",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "國文",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "公民",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "歷史",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "英語",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "生活科技",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "數學",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "導師時間及放學",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "數學",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "輔導活動\r\n英語",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "健康與體育",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "健康與體育",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "英語",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "視覺藝術",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "音樂\r\n國文",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "國文",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "導師時間及放學",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "國文",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "資訊",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "科學實驗\r\n社會專題",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "科學實驗\r\nReading Peak",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "英語",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "地理",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "數學",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "生物",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "數學",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "健康與體育",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "英語",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "數學",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "國文",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "生物",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "歷史",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "導師時間及放學",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "七勇": {
+          "一1": {
+            "subject": "數學",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "英語",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "音樂\r\n國文",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "國文",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "生物",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "生活科技",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "數學之旅\r\n社會專題",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "數學",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "導師時間及放學",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "專題研究\r\n數位創意",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "專題研究\r\nReading Peak",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "英語",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "健康與體育",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "國文",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "數學",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "視覺藝術",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "生物",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "導師時間及放學",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "數學",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "資訊",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "健康與體育",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "健康與體育",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "英語",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "生物",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "地理",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "國文",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "導師時間及放學",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "英語\r\n表演藝術",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "英語",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "科學實驗\r\n閱讀指導",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "科學實驗\r\nReading Peak",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "地理",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "數學",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "公民",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "英語",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "國文",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "英語",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "國文\r\n本土語言",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "歷史",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "數學",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "輔導活動\r\n英語",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "國文",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "導師時間及放學",
+            "day": "五",
+            "period": "9"
+          }
+        },
+        "七智": {
+          "一1": {
+            "subject": "生物",
+            "day": "一",
+            "period": "1"
+          },
+          "一2": {
+            "subject": "地理",
+            "day": "一",
+            "period": "2"
+          },
+          "一3": {
+            "subject": "公民",
+            "day": "一",
+            "period": "3"
+          },
+          "一4": {
+            "subject": "數學",
+            "day": "一",
+            "period": "4"
+          },
+          "一5": {
+            "subject": "國文\r\n本土語言",
+            "day": "一",
+            "period": "5"
+          },
+          "一6": {
+            "subject": "數學之旅\r\n社會專題",
+            "day": "一",
+            "period": "6"
+          },
+          "一7": {
+            "subject": "視覺藝術",
+            "day": "一",
+            "period": "7"
+          },
+          "一8": {
+            "subject": "英語",
+            "day": "一",
+            "period": "8"
+          },
+          "一9": {
+            "subject": "導師時間及放學",
+            "day": "一",
+            "period": "9"
+          },
+          "二1": {
+            "subject": "科學實驗\r\nReading Peak",
+            "day": "二",
+            "period": "1"
+          },
+          "二2": {
+            "subject": "科學實驗\r\n數位創意",
+            "day": "二",
+            "period": "2"
+          },
+          "二3": {
+            "subject": "國文",
+            "day": "二",
+            "period": "3"
+          },
+          "二4": {
+            "subject": "英語",
+            "day": "二",
+            "period": "4"
+          },
+          "二5": {
+            "subject": "數學",
+            "day": "二",
+            "period": "5"
+          },
+          "二6": {
+            "subject": "英語\r\n表演藝術",
+            "day": "二",
+            "period": "6"
+          },
+          "二7": {
+            "subject": "音樂\r\n國文",
+            "day": "二",
+            "period": "7"
+          },
+          "二8": {
+            "subject": "歷史",
+            "day": "二",
+            "period": "8"
+          },
+          "二9": {
+            "subject": "導師時間及放學",
+            "day": "二",
+            "period": "9"
+          },
+          "三1": {
+            "subject": "輔導活動\r\n英語",
+            "day": "三",
+            "period": "1"
+          },
+          "三2": {
+            "subject": "英語",
+            "day": "三",
+            "period": "2"
+          },
+          "三3": {
+            "subject": "健康與體育",
+            "day": "三",
+            "period": "3"
+          },
+          "三4": {
+            "subject": "健康與體育",
+            "day": "三",
+            "period": "4"
+          },
+          "三5": {
+            "subject": "國文",
+            "day": "三",
+            "period": "5"
+          },
+          "三6": {
+            "subject": "國文",
+            "day": "三",
+            "period": "6"
+          },
+          "三7": {
+            "subject": "生物",
+            "day": "三",
+            "period": "7"
+          },
+          "三8": {
+            "subject": "數學",
+            "day": "三",
+            "period": "8"
+          },
+          "三9": {
+            "subject": "數學",
+            "day": "三",
+            "period": "9"
+          },
+          "四1": {
+            "subject": "資訊",
+            "day": "四",
+            "period": "1"
+          },
+          "四2": {
+            "subject": "健康與體育",
+            "day": "四",
+            "period": "2"
+          },
+          "四3": {
+            "subject": "專題研究\r\nReading Peak",
+            "day": "四",
+            "period": "3"
+          },
+          "四4": {
+            "subject": "專題研究\r\n閱讀指導",
+            "day": "四",
+            "period": "4"
+          },
+          "四5": {
+            "subject": "英語",
+            "day": "四",
+            "period": "5"
+          },
+          "四6": {
+            "subject": "數學",
+            "day": "四",
+            "period": "6"
+          },
+          "四7": {
+            "subject": "地理",
+            "day": "四",
+            "period": "7"
+          },
+          "四8": {
+            "subject": "國文",
+            "day": "四",
+            "period": "8"
+          },
+          "四9": {
+            "subject": "導師時間及放學",
+            "day": "四",
+            "period": "9"
+          },
+          "五1": {
+            "subject": "生物",
+            "day": "五",
+            "period": "1"
+          },
+          "五2": {
+            "subject": "數學",
+            "day": "五",
+            "period": "2"
+          },
+          "五3": {
+            "subject": "國文",
+            "day": "五",
+            "period": "3"
+          },
+          "五4": {
+            "subject": "歷史",
+            "day": "五",
+            "period": "4"
+          },
+          "五5": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "5"
+          },
+          "五6": {
+            "subject": "班、週會",
+            "day": "五",
+            "period": "6"
+          },
+          "五7": {
+            "subject": "英語",
+            "day": "五",
+            "period": "7"
+          },
+          "五8": {
+            "subject": "生活科技",
+            "day": "五",
+            "period": "8"
+          },
+          "五9": {
+            "subject": "導師時間及放學",
+            "day": "五",
+            "period": "9"
+          }
+        }
+      },
+      "subjectTeachers": {
+        "十二信": {
+          "0": "0",
+          "國文": "洪珮純",
+          "英文": "陳志昂",
+          "數學": "劉惠平",
+          "歷史": "穆孝政",
+          "地理": "葉昕祐",
+          "公民": "陳凱琳",
+          "美術": "許富鳳",
+          "體育": "體發中心",
+          "生涯規劃": "許婷婷",
+          "全民國防": "游承翰",
+          "自主研習": "陳凱琳",
+          "班週會": "陳凱琳",
+          "音樂": "李沛絨",
+          "生活科技": "郭玲君",
+          "資訊": "秦靜儀"
+        },
+        "十二望": {
+          "0": "0",
+          "國文": "余欣怡",
+          "英文": "許惟絜",
+          "數學": "陳昱辰",
+          "物理": "陸怡中",
+          "化學": "江青釗",
+          "生物": "王瑜君",
+          "美術": "許富鳳",
+          "體育": "體發中心",
+          "生涯規劃": "許婷婷",
+          "全民國防": "游承翰",
+          "自主研習": "陳昱辰",
+          "班週會": "陳昱辰",
+          "音樂": "李沛絨",
+          "生活科技": "郭玲君",
+          "資訊": "秦靜儀"
+        },
+        "十二愛": {
+          "0": "0",
+          "國文": "余欣怡",
+          "英文": "陳志昂",
+          "數學": "徐世明",
+          "物理": "陸怡中",
+          "化學": "江青釗",
+          "生物": "王瑜君",
+          "美術": "許富鳳",
+          "體育": "體發中心",
+          "生涯規劃": "許婷婷",
+          "全民國防": "游承翰",
+          "自主研習": "徐世明",
+          "班週會": "徐世明",
+          "音樂": "李沛絨",
+          "生活科技": "郭玲君",
+          "資訊": "秦靜儀"
+        },
+        "十一信": {
+          "0": "0",
+          "國文": "洪珮純",
+          "英文": "林鈺庭",
+          "數學": "D劉惠平",
+          "歷史": "穆孝政",
+          "地理": "葉昕祐",
+          "公民": "鍾道政",
+          "音樂": "李沛絨",
+          "校訂必修": "0",
+          "體育": "體發中心",
+          "自主學習": "0",
+          "班週會": "洪珮純"
+        },
+        "十一望": {
+          "0": "0",
+          "國文": "彭思耘",
+          "英文": "范宜",
+          "數學": "D劉惠平",
+          "生物": "王瑜君",
+          "化學": "張立仁",
+          "物理": "張毅儒",
+          "地球科學": "洪國恩",
+          "歷史": "劉昱妤",
+          "地理": "葉昕祐",
+          "音樂": "李沛絨",
+          "體育": "體發中心",
+          "班週會": "劉惠平",
+          "自主學習": "0",
+          "校訂必修": "0"
+        },
+        "十一愛": {
+          "0": "0",
+          "國文": "余欣怡",
+          "英文": "林鈺庭",
+          "數學": "D劉惠平",
+          "生物": "王瑜君",
+          "化學": "江選毅",
+          "物理": "張毅儒",
+          "地球科學": "洪國恩",
+          "歷史": "劉昱妤",
+          "地理": "葉昕祐",
+          "音樂": "李沛絨",
+          "體育": "體發中心",
+          "班週會": "張毅儒",
+          "自主學習": "0",
+          "校訂必修": "0"
+        },
+        "十信": {
+          "0": "0",
+          "國文": "徐麗文",
+          "英文": "杜宛儒",
+          "數學": "D陳昱辰",
+          "化學": "張立仁",
+          "物理": "林柏青",
+          "地球科學": "洪國恩",
+          "歷史": "劉昱妤",
+          "地理": "葉昕祐",
+          "公民": "鍾道政",
+          "生物": "呂毓蘋",
+          "本土語言": "劉雅文",
+          "體育": "體發中心",
+          "生涯規劃": "許婷婷",
+          "外語選修": "0",
+          "多元選修": "0",
+          "班週會": "杜宛儒",
+          "財政法": "陳凱琳"
+        },
+        "十望": {
+          "0": "0",
+          "國文": "彭思耘",
+          "英文": "許惟絜",
+          "數學": "D陳昱辰",
+          "生物": "呂毓蘋",
+          "化學": "徐翠徽",
+          "物理": "張毅儒",
+          "地球科學": "洪國恩",
+          "歷史": "陳韻如",
+          "地理": "徐佳音",
+          "公民": "陳凱琳",
+          "本土語言": "李沛絨",
+          "體育": "體發中心",
+          "生涯規劃": "許婷婷",
+          "外語選修": "0",
+          "多元選修": "0",
+          "班週會": "陳俊佑"
+        },
+        "十愛": {
+          "0": "0",
+          "國文": "彭思耘",
+          "英文": "杜宛儒",
+          "數學": "D陳昱辰",
+          "生物": "呂毓蘋",
+          "化學": "徐翠徽",
+          "物理": "張毅儒",
+          "地球科學": "洪國恩",
+          "歷史": "陳韻如",
+          "地理": "徐佳音",
+          "公民": "陳凱琳",
+          "本土語言": "李沛絨",
+          "體育": "體發中心",
+          "生涯規劃": "許婷婷",
+          "外語選修": "0",
+          "多元選修": "0",
+          "班週會": "陳俊佑"
+        },
+        "九信": {
+          "0": "0",
+          "國文": "呂昀曦",
+          "英文": "杜宛儒",
+          "數學": "戴文賓",
+          "生物": "王瑜君",
+          "化學": "張立仁",
+          "物理": "張玟翔",
+          "地球科學": "洪國恩",
+          "歷史": "穆孝政",
+          "地理": "徐佳音",
+          "公民": "陳凱琳",
+          "輔導": "江沛潔",
+          "視覺藝術": "羅月卿",
+          "AI課程": "黃千娟",
+          "資訊": "黃千娟",
+          "體育": "體發中心",
+          "多元選修": "0",
+          "英文小組": "0",
+          "特色課程": "0",
+          "表演藝術": "劉雅文",
+          "班週會": "穆孝政"
+        },
+        "九望": {
+          "0": "0",
+          "國文": "陳思穎",
+          "英文": "林致佳",
+          "數學": "戴文賓",
+          "生物": "王瑜君",
+          "化學": "張立仁",
+          "物理": "張毅儒",
+          "地球科學": "楊惠婷",
+          "歷史": "穆孝政",
+          "地理": "徐佳音",
+          "公民": "陳凱琳",
+          "輔導": "江沛潔",
+          "視覺藝術": "羅月卿",
+          "AI課程": "宋千儀",
+          "資訊": "黃千娟",
+          "體育": "體發中心",
+          "多元選修": "0",
+          "英文小組": "0",
+          "特色課程": "0",
+          "表演藝術": "劉雅文",
+          "班週會": "張立仁"
+        },
+        "九愛": {
+          "0": "0",
+          "國文": "曾國瑜",
+          "英文": "范宜",
+          "數學": "陳妙如",
+          "生物": "王瑜君",
+          "化學": "張立仁",
+          "物理": "張玟翔",
+          "地球科學": "洪國恩",
+          "歷史": "穆孝政",
+          "地理": "徐佳音",
+          "公民": "陳凱琳",
+          "輔導": "江沛潔",
+          "視覺藝術": "羅月卿",
+          "AI課程": "宋千儀",
+          "資訊": "黃千娟",
+          "體育": "體發中心",
+          "多元選修": "0",
+          "英文小組": "0",
+          "特色課程": "0",
+          "表演藝術": "劉雅文",
+          "班週會": "張立仁"
+        },
+        "九仁": {
+          "0": "0",
+          "國文": "涂沛宗",
+          "英語": "吳芷嫺",
+          "數學": "林文章",
+          "理化": "古玉鳳",
+          "生物": "馬瑪宣",
+          "地球科學": "楊惠婷",
+          "歷史": "陳韻如",
+          "地理": "徐佳音",
+          "公民": "鍾道政",
+          "音樂": "李沛絨",
+          "視覺藝術": "羅月卿",
+          "生活科技": "陳建宏",
+          "健康與體育": "體發中心",
+          "輔導": "許婷婷",
+          "班週會": "林文章",
+          "自主練習": "林文章"
+        },
+        "九勇": {
+          "0": "0",
+          "國文": "高智偉",
+          "英語": "林家甄",
+          "數學": "劉衣玲",
+          "理化": "古玉鳳",
+          "生物": "馬瑪宣",
+          "地球科學": "楊惠婷",
+          "歷史": "陳韻如",
+          "地理": "徐佳音",
+          "公民": "鍾道政",
+          "音樂": "李沛絨",
+          "視覺藝術": "羅月卿",
+          "生活科技": "陳建宏",
+          "健康與體育": "體發中心",
+          "輔導": "許婷婷",
+          "班週會": "徐佳音",
+          "自主練習": "徐佳音"
+        },
+        "九智": {
+          "0": "0",
+          "國文": "陳思穎",
+          "英語": "謝翼州",
+          "數學": "林文章",
+          "理化": "古玉鳳",
+          "生物": "馬瑪宣",
+          "地球科學": "楊惠婷",
+          "歷史": "陳韻如",
+          "地理": "徐佳音",
+          "公民": "鍾道政",
+          "音樂": "李沛絨",
+          "視覺藝術": "羅月卿",
+          "生活科技": "陳建宏",
+          "健康與體育": "體發中心",
+          "輔導": "許婷婷",
+          "班週會": "陳思穎",
+          "自主練習": "陳思穎"
+        },
+        "八信": {
+          "國文": "吳淑貞",
+          "英語": "駱宣",
+          "數學": "林文章",
+          "理化": "楊惠婷",
+          "歷史": "陳韻如",
+          "地理": "李仲頤",
+          "公民": "沈明穎",
+          "本土語言": "秦靜儀",
+          "音樂": "李沛絨",
+          "視覺藝術": "王詩閔",
+          "輔導活動": "江沛潔",
+          "生活科技": "郭玲君",
+          "資訊": "陳建宏",
+          "閱讀指導": "吳淑貞",
+          "健康與體育": "體發中心",
+          "自然專題": "楊惠婷/呂毓蘋",
+          "數學專題": "陳俊佑",
+          "資訊專題": "STEM",
+          "數學之旅": "陳俊佑",
+          "科學實驗": "張立仁",
+          "導師時間及放學": "吳淑貞"
+        },
+        "八望": {
+          "國文": "葉惠珊",
+          "英語": "林家甄",
+          "數學": "戴文賓",
+          "理化": "楊惠婷",
+          "歷史": "陳韻如",
+          "地理": "吳紹慈",
+          "公民": "沈明穎",
+          "本土語言": "秦靜儀",
+          "音樂": "李沛絨",
+          "視覺藝術": "王詩閔",
+          "輔導活動": "江沛潔",
+          "生活科技": "郭玲君",
+          "資訊": "陳建宏",
+          "閱讀指導": "葉惠珊",
+          "健康與體育": "體發中心",
+          "自然專題": "楊惠婷/呂毓蘋",
+          "數學專題": "陳俊佑",
+          "資訊專題": "STEM",
+          "數學之旅": "陳俊佑",
+          "科學實驗": "張立仁",
+          "導師時間及放學": "戴文賓"
+        },
+        "八愛": {
+          "國文": "吳淑貞",
+          "英語": "駱宣",
+          "數學": "黃仕奇",
+          "理化": "曹令霖",
+          "歷史": "陳韻如",
+          "地理": "李仲頤",
+          "公民": "沈明穎",
+          "本土語言": "秦靜儀",
+          "音樂": "李沛絨",
+          "視覺藝術": "王詩閔",
+          "輔導活動": "江沛潔",
+          "生活科技": "郭玲君",
+          "資訊": "陳建宏",
+          "閱讀指導": "吳淑貞",
+          "健康與體育": "體發中心",
+          "自然專題": "楊惠婷/呂毓蘋",
+          "數學專題": "陳俊佑",
+          "資訊專題": "STEM",
+          "數學之旅": "陳俊佑",
+          "科學實驗": "張立仁",
+          "導師時間及放學": "沈明穎"
+        },
+        "八仁": {
+          "國文": "呂焜霖",
+          "英語": "魏介珩",
+          "數學": "曾清文",
+          "理化": "林柏青",
+          "歷史": "陳韻如",
+          "地理": "吳紹慈",
+          "公民": "沈明穎",
+          "本土語言": "秦靜儀",
+          "音樂": "李沛絨",
+          "視覺藝術": "王詩閔",
+          "輔導活動": "江沛潔",
+          "生活科技": "郭玲君",
+          "資訊": "陳建宏",
+          "閱讀指導": "呂焜霖",
+          "健康與體育": "體發中心",
+          "自然專題": "楊惠婷/呂毓蘋",
+          "數學專題": "陳俊佑",
+          "資訊專題": "STEM",
+          "數學之旅": "陳俊佑",
+          "科學實驗": "張立仁",
+          "導師時間及放學": "曾清文"
+        },
+        "八勇": {
+          "國文": "高智偉",
+          "英語": "林家甄",
+          "數學": "蔡子涵",
+          "理化": "徐翠徽",
+          "歷史": "陳韻如",
+          "地理": "吳紹慈",
+          "公民": "沈明穎",
+          "本土語言": "秦靜儀",
+          "音樂": "李沛絨",
+          "視覺藝術": "王詩閔",
+          "輔導活動": "江沛潔",
+          "生活科技": "郭玲君",
+          "資訊": "陳建宏",
+          "閱讀指導": "高智偉",
+          "健康與體育": "體發中心",
+          "自然專題": "楊惠婷/呂毓蘋",
+          "數學專題": "陳俊佑",
+          "資訊專題": "STEM",
+          "數學之旅": "陳俊佑",
+          "科學實驗": "張立仁",
+          "導師時間及放學": "高智偉"
+        },
+        "八智": {
+          "國文": "涂沛宗",
+          "英語": "魏介珩",
+          "數學": "曾清文",
+          "理化": "徐翠徽",
+          "歷史": "陳韻如",
+          "地理": "李仲頤",
+          "公民": "沈明穎",
+          "本土語言": "秦靜儀",
+          "音樂": "李沛絨",
+          "視覺藝術": "王詩閔",
+          "輔導活動": "江沛潔",
+          "生活科技": "郭玲君",
+          "資訊": "陳建宏",
+          "閱讀指導": "涂沛宗",
+          "健康與體育": "體發中心",
+          "自然專題": "楊惠婷/呂毓蘋",
+          "數學專題": "陳俊佑",
+          "資訊專題": "STEM",
+          "數學之旅": "陳俊佑",
+          "科學實驗": "張立仁",
+          "導師時間及放學": "陳韻如"
+        },
+        "七信": {
+          "國文": "呂昀曦",
+          "英語": "林致佳",
+          "數學": "劉衣玲",
+          "生物": "李盈杰",
+          "歷史": "劉昱妤",
+          "地理": "吳紹慈",
+          "公民": "沈明穎",
+          "本土語言": "秦靜儀",
+          "音樂": "李沛絨",
+          "視覺藝術": "羅月卿",
+          "輔導活動": "江沛潔",
+          "生活科技": "郭玲君",
+          "資訊": "黃千娟",
+          "閱讀指導": "呂昀曦",
+          "自然專研": "古玉鳳",
+          "資訊專研": "STEM",
+          "數學專研": "陳俊佑",
+          "數學之旅": "陳俊佑",
+          "科學實驗": "馬瑪宣",
+          "數位創意": "藝文中心",
+          "健康與體育": "體發中心"
+        },
+        "七望": {
+          "國文": "曾國瑜",
+          "英語": "駱宣",
+          "數學": "黃仕奇",
+          "生物": "彭黃銘",
+          "歷史": "劉昱妤",
+          "地理": "吳紹慈",
+          "公民": "沈明穎",
+          "本土語言": "秦靜儀",
+          "音樂": "李沛絨",
+          "視覺藝術": "羅月卿",
+          "輔導活動": "江沛潔",
+          "生活科技": "郭玲君",
+          "資訊": "黃千娟",
+          "閱讀指導": "曾國瑜",
+          "自然專研": "古玉鳳",
+          "資訊專研": "STEM",
+          "數學專研": "陳俊佑",
+          "數學之旅": "陳俊佑",
+          "科學實驗": "馬瑪宣",
+          "數位創意": "藝文中心",
+          "健康與體育": "體發中心"
+        },
+        "七愛": {
+          "國文": "呂焜霖",
+          "英語": "吳芷嫺",
+          "數學": "周瑞仁",
+          "生物": "彭黃銘",
+          "歷史": "劉昱妤",
+          "地理": "吳紹慈",
+          "公民": "沈明穎",
+          "本土語言": "秦靜儀",
+          "音樂": "李沛絨",
+          "視覺藝術": "羅月卿",
+          "輔導活動": "江沛潔",
+          "生活科技": "郭玲君",
+          "資訊": "黃千娟",
+          "閱讀指導": "呂焜霖",
+          "自然專研": "王瑜君",
+          "資訊專研": "STEM",
+          "數學專研": "陳俊佑",
+          "數學之旅": "陳俊佑",
+          "科學實驗": "馬瑪宣",
+          "數位創意": "藝文中心",
+          "健康與體育": "體發中心"
+        },
+        "七仁": {
+          "國文": "曾國瑜",
+          "英語": "吳芷嫺",
+          "數學": "黃仕奇",
+          "生物": "呂毓蘋",
+          "歷史": "劉昱妤",
+          "地理": "吳紹慈",
+          "公民": "沈明穎",
+          "本土語言": "秦靜儀",
+          "音樂": "李沛絨",
+          "視覺藝術": "羅月卿",
+          "輔導活動": "江沛潔",
+          "生活科技": "郭玲君",
+          "資訊": "黃千娟",
+          "閱讀指導": "曾國瑜",
+          "自然專研": "王瑜君",
+          "資訊專研": "STEM",
+          "數學專研": "陳俊佑",
+          "數學之旅": "陳俊佑",
+          "科學實驗": "馬瑪宣",
+          "數位創意": "藝文中心",
+          "健康與體育": "體發中心"
+        },
+        "七勇": {
+          "國文": "葉惠珊",
+          "英語": "林致佳",
+          "數學": "劉衣玲",
+          "生物": "李盈杰",
+          "歷史": "劉昱妤",
+          "地理": "吳紹慈",
+          "公民": "沈明穎",
+          "本土語言": "秦靜儀",
+          "音樂": "李沛絨",
+          "視覺藝術": "羅月卿",
+          "輔導活動": "江沛潔",
+          "生活科技": "郭玲君",
+          "資訊": "黃千娟",
+          "閱讀指導": "葉惠珊",
+          "自然專研": "王瑜君",
+          "資訊專研": "STEM",
+          "數學專研": "陳俊佑",
+          "數學之旅": "陳俊佑",
+          "科學實驗": "馬瑪宣",
+          "數位創意": "藝文中心",
+          "健康與體育": "體發中心"
+        },
+        "七智": {
+          "國文": "涂沛宗",
+          "英語": "魏介珩",
+          "數學": "周瑞仁",
+          "生物": "呂毓蘋",
+          "歷史": "劉昱妤",
+          "地理": "吳紹慈",
+          "公民": "沈明穎",
+          "本土語言": "秦靜儀",
+          "音樂": "李沛絨",
+          "視覺藝術": "羅月卿",
+          "輔導活動": "江沛潔",
+          "生活科技": "郭玲君",
+          "資訊": "黃千娟",
+          "閱讀指導": "涂沛宗",
+          "自然專研": "古玉鳳",
+          "資訊專研": "STEM",
+          "數學專研": "陳俊佑",
+          "數學之旅": "陳俊佑",
+          "科學實驗": "馬瑪宣",
+          "數位創意": "藝文中心",
+          "健康與體育": "體發中心"
+        }
+      }
+    }
+  }
+}
