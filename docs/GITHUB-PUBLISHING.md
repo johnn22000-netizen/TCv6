@@ -60,6 +60,6 @@ Google Drive/
 - 不要用同一份公開 JSON 同時服務所有學校的正式資料。
 
 ## 你現在這個專案的定位
-- `index.html` 和 `js/app.runtime.js` 是公版。
+- `index.html` 和 `app.runtime.js` 是公版。
 - `A4.xlsx` 是共用匯出樣板。
 - 真實課表與歷史異動應該移到各校 Google Drive 私有資料夾。
