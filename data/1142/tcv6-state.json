@@ -1,0 +1,18 @@
+{
+  "schoolId": "1142",
+  "updatedAt": "2026-05-29T08:51:02.947Z",
+  "data": {
+    "events": [],
+    "adjustmentDrafts": [],
+    "adjustmentHistory": [],
+    "baseScheduleData": {
+      "version": "1.0",
+      "schedules": {
+        "驗證班": {}
+      },
+      "subjectTeachers": {
+        "驗證班": {}
+      }
+    }
+  }
+}

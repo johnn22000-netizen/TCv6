@@ -1,7 +1,7 @@
 ﻿;
 
 
-/* ---- app.bundle.js ---- */
+/* ---- app.runtime.js ---- */
 
 /* TCv6 single-file bundle (auto-generated) */
 
@@ -696,7 +696,7 @@ let adjustmentViewMode = "simple";
 let isOpsCompactMode = false;
 let slotPanelPinned = true;
 let slotPanelDragState = null;
-let floatingActiveTab = "main";
+let floatingActiveTab = "settings";
 let stakeholderView = "admin";
 let draftEntityFilter = { type: "all", value: "" };
 let historySearchKeyword = "";
@@ -1329,7 +1329,7 @@ async function loadSpreadsheetImportLibrary() {
       if (window && window.XLSX) {
         return window.XLSX;
       }
-      throw new Error("XLSX 本地套件未載入，請確認 app.bundle.js 已完整載入");
+      throw new Error("XLSX 本地套件未載入，請確認 app.runtime.js 已完整載入");
     })();
   }
   return spreadsheetImportLibPromise;
@@ -1439,6 +1439,32 @@ function buildAcademicTermId(year, term) {
   return `${y}${t}`;
 }
 
+function getAcademicTermSortScore(termId) {
+  const parsed = parseAcademicTermId(termId);
+  if (!parsed) return Number.NEGATIVE_INFINITY;
+  const yearNum = Number(parsed.year);
+  if (!Number.isFinite(yearNum)) return Number.NEGATIVE_INFINITY;
+  const termWeightMap = {
+    "1": 1,
+    "寒": 2,
+    "2": 3,
+    "暑": 4
+  };
+  const termWeight = termWeightMap[parsed.term] || 0;
+  return yearNum * 10 + termWeight;
+}
+
+function sortSchoolBindingsByNewest(bindings) {
+  return (Array.isArray(bindings) ? bindings.slice() : []).sort((a, b) => {
+    const scoreB = getAcademicTermSortScore(b && b.schoolId ? b.schoolId : "");
+    const scoreA = getAcademicTermSortScore(a && a.schoolId ? a.schoolId : "");
+    if (scoreB !== scoreA) return scoreB - scoreA;
+    const idA = String(a && a.schoolId ? a.schoolId : "");
+    const idB = String(b && b.schoolId ? b.schoolId : "");
+    return idB.localeCompare(idA, "zh-Hant");
+  });
+}
+
 function populateAcademicYearOptions() {
   if (!el.settingsAcademicYear) return;
   const currentRocYear = String(new Date().getFullYear() - 1911);
@@ -1490,9 +1516,9 @@ function normalizeBindingOption(item) {
 }
 
 function setAvailableSchoolBindings(bindings) {
-  availableSchoolBindings = Array.isArray(bindings)
+  availableSchoolBindings = sortSchoolBindingsByNewest(Array.isArray(bindings)
     ? bindings.map(normalizeBindingOption).filter(Boolean)
-    : [];
+    : []);
 
   if (!el.settingsSchoolSelect) return;
 
@@ -1542,8 +1568,10 @@ async function hydrateSchoolBindings() {
     return;
   }
 
+  // 預設使用最新學期資料夾。
+  const newestBinding = availableSchoolBindings[0];
   currentSchoolBinding = normalizeSchoolBinding({
-    schoolId: availableSchoolBindings[0].schoolId,
+    schoolId: newestBinding.schoolId,
     backendUrl: currentSchoolBinding.backendUrl
   });
   currentSchoolBinding = SchoolBindingStorage.saveBinding(currentSchoolBinding);
@@ -1798,11 +1826,21 @@ async function pushSchoolDataToCloud() {
     }
   };
 
-  const response = await fetch(requestUrl, {
-    method: "POST",
-    body: JSON.stringify(body),
-    credentials: "omit"
-  });
+  let response;
+  try {
+    response = await fetch(requestUrl, {
+      method: "POST",
+      // Keep request "simple" to avoid browser preflight OPTIONS for GAS endpoints.
+      body: JSON.stringify(body),
+      credentials: "omit"
+    });
+  } catch (err) {
+    const message = err && err.message ? err.message : "Failed to fetch";
+    throw new Error(
+      `雲端推送失敗（網路/CORS）：${message}。\n` +
+      "請確認 Apps Script Web App 已部署為可供外部存取，且回應包含 Access-Control-Allow-Origin。"
+    );
+  }
   if (!response.ok) {
     throw new Error(`雲端推送失敗（HTTP ${response.status}）`);
   }
@@ -1811,6 +1849,46 @@ async function pushSchoolDataToCloud() {
   if (payload && payload.ok === false) {
     throw new Error(String(payload.message || "雲端回傳失敗"));
   }
+}
+
+async function tryEnsureFolderByAction(action, schoolId) {
+  const backendUrl = String(currentSchoolBinding.backendUrl || "").trim();
+  if (!backendUrl) return false;
+
+  const requestUrl = buildBackendUrl(backendUrl, action, schoolId);
+
+  // 優先 POST，若舊版 API 不支援再退回 GET。
+  const postResponse = await fetch(requestUrl, {
+    method: "POST",
+    // Keep request "simple" to avoid browser preflight OPTIONS for GAS endpoints.
+    body: JSON.stringify({ schoolId }),
+    credentials: "omit"
+  });
+  if (postResponse.ok) {
+    const payload = await postResponse.json().catch(() => ({}));
+    if (!payload || payload.ok !== false) return true;
+  }
+
+  const getResponse = await fetch(requestUrl, {
+    method: "GET",
+    credentials: "omit"
+  });
+  if (!getResponse.ok) return false;
+  const payload = await getResponse.json().catch(() => ({}));
+  return !payload || payload.ok !== false;
+}
+
+async function ensureSchoolFolderExistsInCloud(schoolId) {
+  const actions = ["ensureTerm", "ensureFolder", "ensureSchool", "createTerm", "createFolder"];
+  for (const action of actions) {
+    try {
+      const ensured = await tryEnsureFolderByAction(action, schoolId);
+      if (ensured) return true;
+    } catch (_) {
+      // ignore and try next compatibility action
+    }
+  }
+  return false;
 }
 
 async function applySchoolBinding(binding, { saveBinding = true, reloadState = true } = {}) {
@@ -3656,7 +3734,7 @@ async function loadExportLibraries() {
       const htmlToImageGlobal = window && window.htmlToImage ? window.htmlToImage : null;
 
       if (!ExcelJSGlobal || !JSZipGlobal || !htmlToImageGlobal) {
-        throw new Error("本地匯出套件未完整載入，請確認 app.bundle.js 已完整載入");
+        throw new Error("本地匯出套件未完整載入，請確認 app.runtime.js 已完整載入");
       }
 
       return {
@@ -4899,7 +4977,7 @@ async function init() {
   el.anchorDate.value = today();
   await loadStateFromActiveSchoolStorage();
   await autoSyncFromCloudOnStartup();
-  autoCloudSyncEnabled = true;
+  autoCloudSyncEnabled = false;
   promptInitialScheduleUploadIfNeeded();
   setOpsCompactMode(false);
   renderStakeholderButtons();
@@ -4950,12 +5028,7 @@ async function init() {
     });
   }
   if (el.floatingTabSettingsBtn) {
-    el.floatingTabSettingsBtn.addEventListener("click", async () => {
-      try {
-        await refreshTermFoldersFromCloud();
-      } catch (err) {
-        console.error("refreshTermFoldersFromCloud failed:", err);
-      }
+    el.floatingTabSettingsBtn.addEventListener("click", () => {
       renderScheduleSourceStatus();
       syncSchoolBindingControls();
       renderSchoolBindingStatus();
@@ -5060,14 +5133,20 @@ async function init() {
         return;
       }
 
+      const originalLabel = el.settingsLoadFileBtn.textContent;
+      setElementDisabled(el.settingsLoadFileBtn, true);
+      el.settingsLoadFileBtn.textContent = "處理中...";
+
       try {
         const nextTermId = readNewTermIdFromForm({ required: true });
+        const targetSchoolId = nextTermId;
         if (nextTermId !== currentSchoolBinding.schoolId) {
           const binding = normalizeSchoolBinding({
             schoolId: nextTermId,
             backendUrl: el.settingsBackendUrl ? el.settingsBackendUrl.value : currentSchoolBinding.backendUrl
           });
-          await applySchoolBinding(binding, { saveBinding: true, reloadState: true });
+          await applySchoolBinding(binding, { saveBinding: true, reloadState: false });
+          await loadStateFromActiveSchoolStorage();
         }
 
         const arrayBuffer = await file.arrayBuffer();
@@ -5076,10 +5155,29 @@ async function init() {
           persist: true,
           sourceLabel: `自訂上傳課表：${file.name}（${currentSchoolBinding.schoolId}）`
         });
-        alert(`已載入課表：${file.name}\n學期資料夾：${getSchoolLabel(currentSchoolBinding.schoolId)}\n若雲端尚無此資料夾，系統會自動建立。`);
+
+        renderSchoolBindingStatus("檢查雲端資料夾中");
+        await ensureSchoolFolderExistsInCloud(currentSchoolBinding.schoolId);
+
+        renderSchoolBindingStatus("上傳原始課表中");
+        await pushSchoolDataToCloud();
+
+        await refreshTermFoldersFromCloud();
+        const folderDetected = availableSchoolBindings.some((item) => String(item && item.schoolId ? item.schoolId : "") === targetSchoolId);
+        if (!folderDetected) {
+          throw new Error(`雲端尚未偵測到學期資料夾 ${targetSchoolId}，請檢查 Apps Script 權限與資料夾建立邏輯。`);
+        }
+        await loadStateFromActiveSchoolStorage();
+        renderSchoolBindingStatus("原始課表已上傳");
+
+        alert(`已完成課表載入與雲端上傳：${file.name}\n學期資料夾：${getSchoolLabel(currentSchoolBinding.schoolId)}\n已將原始課表 JSON 寫入雲端。`);
       } catch (err) {
         console.error(err);
+        renderSchoolBindingStatus("課表上傳失敗");
         alert(`課表載入失敗：${err && err.message ? err.message : "未知錯誤"}`);
+      } finally {
+        setElementDisabled(el.settingsLoadFileBtn, false);
+        el.settingsLoadFileBtn.textContent = originalLabel;
       }
     });
   }
@@ -5090,8 +5188,9 @@ async function init() {
         ? el.settingsScheduleFile.files[0]
         : null;
       if (!file) return;
-      // 第一次開啟無雲端原始課表時，選完檔案立即套用並觸發自動上傳。
-      el.settingsLoadFileBtn.click();
+      if (el.settingsSourceStatus) {
+        el.settingsSourceStatus.textContent = `已選擇檔案：${file.name}（尚未載入）`;
+      }
     });
   }
 
